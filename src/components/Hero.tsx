@@ -2,14 +2,9 @@
 
 import Image from "next/image";
 import { personalInfo } from "@/data/portfolioData";
-import { FileDown, Mail, ArrowRight, Github, Linkedin, MessageSquare } from "lucide-react";
+import { ArrowRight, Github, Linkedin, MessageSquare, Mail } from "lucide-react";
 
 export default function Hero() {
-  const handleResumeClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    alert("Resume download triggered! You can link your resume PDF in /public/resume.pdf");
-  };
-
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background radial gradient glow */}
@@ -18,7 +13,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Designation, Headline, Intro, CTAs */}
+          {/* Left Column: Designation, Headline, CTAs, Socials */}
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
             
             {/* Designation Pill */}
@@ -35,36 +30,26 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* Intro paragraph */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Computer Science & Engineering student at <span className="text-cyan-300 font-medium">Metropolitan University, Sylhet</span>. 
-              Passionate about engineering responsive, modern web applications with clean architecture, intuitive interfaces, and real-time backend integrations.
-            </p>
-
-            {/* Action Buttons: Resume Download & Contact */}
+            {/* Action Buttons: View Featured Projects & Get In Touch (No duplicate resume button) */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-              {/* Resume Download Button */}
-              <button
-                onClick={handleResumeClick}
-                id="hero-resume-btn"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-0.5 transition-all"
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-0.5 transition-all"
               >
-                <FileDown className="w-5 h-5" />
-                <span>Download Resume</span>
-              </button>
+                <span>View Featured Projects</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
 
-              {/* Get in Touch CTA */}
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-slate-200 font-semibold text-sm sm:text-base transition-all hover:border-cyan-500/40"
               >
                 <span>Get In Touch</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400" />
               </a>
             </div>
 
             {/* Social Links Row */}
-            <div className="pt-4 flex items-center justify-center lg:justify-start gap-4">
+            <div className="pt-3 flex items-center justify-center lg:justify-start gap-4">
               <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">
                 Connect:
               </span>
@@ -114,7 +99,7 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Profile Photo with Glowing Ring */}
+          {/* Right Column: Circular Profile Photo with Glowing Ring & Floating Badge */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative group">
               
@@ -134,11 +119,11 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Floating Badge (e.g. Next.js & React) */}
+              {/* Floating Status Badge */}
               <div className="absolute -bottom-2 -left-2 bg-[#0c1427]/90 border border-white/10 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2.5">
                 <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
                 <span className="text-xs font-semibold text-slate-200">
-                  Open for Internships
+                  Open for Opportunities
                 </span>
               </div>
 
