@@ -10,7 +10,7 @@ export const personalInfo = {
   whatsappUrl: "https://wa.me/8801788194586",
   githubUrl: "https://github.com/Samiha-26",
   linkedinUrl: "https://www.linkedin.com/in/samihaarahman/",
-  resumeUrl: "#", // Clickable button ready for resume download
+  resumeUrl: "#",
   location: "Sylhet, Bangladesh",
   bio: [
     "I'm a Computer Science and Engineering student at Metropolitan University, Sylhet, working toward becoming a full-stack web developer.",

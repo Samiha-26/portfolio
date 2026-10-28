@@ -2,103 +2,118 @@
 
 import Image from "next/image";
 import { personalInfo } from "@/data/portfolioData";
-import { ArrowRight, Github, Linkedin, MessageSquare, Mail } from "lucide-react";
+import { FileDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 export default function Hero() {
   return (
     <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Background radial gradient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-cyan-500/15 via-indigo-500/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none -z-10 theme-ambient-glow opacity-60 transition-all duration-700" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column: Designation, Headline, CTAs, Socials */}
+
+          {/* Left Column: Pill Badge, Greeting, Bold Name, CTAs, Connect */}
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
-            
-            {/* Designation Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-medium tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+
+            {/* Pill Badge matching reference */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-medium tracking-wide shadow-sm theme-pill transition-colors duration-500">
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--theme-accent)" }} />
               <span>Frontend Developer & CSE Undergraduate Student</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
-              Hi, I am{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400">
-                {personalInfo.name}
-              </span>
-            </h1>
-
-            {/* Action Buttons: View Featured Projects & Get In Touch (No duplicate resume button) */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-medium text-xs sm:text-sm shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/35 transform hover:-translate-y-0.5 transition-all"
-              >
-                <span>View Featured Projects</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-slate-200 font-medium text-xs sm:text-sm transition-all hover:border-cyan-500/40"
-              >
-                <span>Get In Touch</span>
-              </a>
+            {/* Headline matching reference: "Hi," + "I'm Samiha Rahman" */}
+            <div className="space-y-1">
+              <p className="font-serif italic text-2xl sm:text-3xl lg:text-4xl font-normal theme-text-accent transition-colors duration-500">
+                Hi,
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.15]">
+                I'm <br />
+                <span className="text-white">
+                  {personalInfo.name}
+                </span>
+              </h1>
             </div>
 
-            {/* Social Links Row */}
-            <div className="pt-3 flex items-center justify-center lg:justify-start gap-4">
-              <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">
-                Connect:
-              </span>
-              
-              {/* GitHub */}
+            {/* Action Buttons: Download Resume (Theme primary) & GitHub Profile (Dark outline) */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+              <a
+                href={personalInfo.resumeUrl}
+                onClick={(e) => {
+                  if (personalInfo.resumeUrl === "#") {
+                    e.preventDefault();
+                    alert("Resume will be available soon!");
+                  }
+                }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm theme-btn-primary transition-all cursor-pointer"
+                title="Download Resume"
+              >
+                <span>Download Resume</span>
+                <FileDown className="w-4 h-4" />
+              </a>
+
               <a
                 href={personalInfo.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-full bg-white/5 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 border border-white/10 hover:border-cyan-500/40 transition-all transform hover:scale-110"
-                title="GitHub Profile"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 hover:bg-white/10 border border-white/15 hover:border-[var(--theme-accent)] text-slate-200 hover:text-white font-medium text-xs sm:text-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
-                <Github className="w-5 h-5" />
+                <span>GitHub Profile</span>
+                <ExternalLink className="w-3.5 h-3.5 theme-text-accent" />
               </a>
+            </div>
 
-              {/* LinkedIn */}
-              <a
-                href={personalInfo.linkedinUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 rounded-full bg-white/5 hover:bg-indigo-500/20 text-slate-300 hover:text-indigo-300 border border-white/10 hover:border-indigo-500/40 transition-all transform hover:scale-110"
-                title="LinkedIn Profile"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
+            {/* Social Connect Row matching reference */}
+            <div className="pt-4 flex items-center justify-center lg:justify-start gap-3">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-semibold">
+                CONNECT:
+              </span>
 
+              <div className="flex items-center gap-2.5">
+                {/* GitHub */}
+                <a
+                  href={personalInfo.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-[var(--theme-accent-bg)] border border-white/10 hover:border-[var(--theme-accent-border)] text-slate-300 hover:text-[var(--theme-accent-light)] flex items-center justify-center transition-all transform hover:scale-105"
+                  title="GitHub Profile"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
 
+                {/* LinkedIn */}
+                <a
+                  href={personalInfo.linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/40 text-slate-300 hover:text-indigo-300 flex items-center justify-center transition-all transform hover:scale-105"
+                  title="LinkedIn Profile"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
 
-              {/* Email */}
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-rose-500/20 text-slate-300 hover:text-rose-300 border border-white/10 hover:border-rose-500/40 transition-all transform hover:scale-110"
-                title="Send Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
+                {/* Email */}
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-rose-500/20 border border-white/10 hover:border-rose-500/40 text-slate-300 hover:text-rose-300 flex items-center justify-center transition-all transform hover:scale-105"
+                  title="Send Email"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
           </div>
 
-          {/* Right Column: Circular Profile Photo with Glowing Ring & Floating Badge */}
-          <div className="lg:col-span-5 flex justify-center">
+          {/* Right Column: Circular Profile Photo with Glowing Ring */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative group">
-              
-              {/* Glowing Aura Background */}
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-teal-400 to-indigo-600 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse" />
-              
-              {/* Profile Image Container */}
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full p-1.5 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-600 shadow-2xl">
+
+              {/* Ambient Glow */}
+              <div className="absolute -inset-2 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition duration-700 theme-ambient-glow" />
+
+              {/* Circular Profile Image Container */}
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full p-1 theme-gradient-ring shadow-2xl transition-all duration-700">
                 <div className="w-full h-full rounded-full overflow-hidden bg-[#0a1020] relative">
                   <Image
                     src={personalInfo.avatar}
@@ -108,14 +123,6 @@ export default function Hero() {
                     className="object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
-
-              {/* Floating Status Badge */}
-              <div className="absolute -bottom-2 -left-2 bg-[#0c1427]/90 border border-white/10 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2.5">
-                <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
-                <span className="text-xs font-semibold text-slate-200">
-                  Open for Opportunities
-                </span>
               </div>
 
             </div>

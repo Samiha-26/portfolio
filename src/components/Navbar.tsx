@@ -1,19 +1,144 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { personalInfo } from "@/data/portfolioData";
-import { Menu, X, FileDown, ExternalLink } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Palette, Check, ChevronDown } from "lucide-react";
+
+export interface ThemePreset {
+  id: string;
+  name: string;
+  accent: string;
+  light: string;
+  dark: string;
+  bg: string;
+  border: string;
+  glow: string;
+  gradientStart: string;
+  gradientMid: string;
+  gradientEnd: string;
+}
+
+export const themes: ThemePreset[] = [
+  {
+    id: "cyan",
+    name: "Cyan Neon",
+    accent: "#22d3ee",
+    light: "#67e8f9",
+    dark: "#0891b2",
+    bg: "rgba(6, 182, 212, 0.15)",
+    border: "rgba(6, 182, 212, 0.4)",
+    glow: "rgba(6, 182, 212, 0.35)",
+    gradientStart: "#22d3ee",
+    gradientMid: "#6366f1",
+    gradientEnd: "#a855f7",
+  },
+  {
+    id: "purple",
+    name: "Electric Violet",
+    accent: "#c084fc",
+    light: "#e9d5ff",
+    dark: "#9333ea",
+    bg: "rgba(168, 85, 247, 0.15)",
+    border: "rgba(168, 85, 247, 0.4)",
+    glow: "rgba(168, 85, 247, 0.35)",
+    gradientStart: "#c084fc",
+    gradientMid: "#ec4899",
+    gradientEnd: "#8b5cf6",
+  },
+  {
+    id: "emerald",
+    name: "Emerald Green",
+    accent: "#34d399",
+    light: "#a7f3d0",
+    dark: "#059669",
+    bg: "rgba(16, 185, 129, 0.15)",
+    border: "rgba(16, 185, 129, 0.4)",
+    glow: "rgba(16, 185, 129, 0.35)",
+    gradientStart: "#34d399",
+    gradientMid: "#06b6d4",
+    gradientEnd: "#3b82f6",
+  },
+  {
+    id: "rose",
+    name: "Sunset Rose",
+    accent: "#fb7185",
+    light: "#fecdd3",
+    dark: "#e11d48",
+    bg: "rgba(244, 63, 94, 0.15)",
+    border: "rgba(244, 63, 94, 0.4)",
+    glow: "rgba(244, 63, 94, 0.35)",
+    gradientStart: "#fb7185",
+    gradientMid: "#f59e0b",
+    gradientEnd: "#ec4899",
+  },
+  {
+    id: "amber",
+    name: "Golden Amber",
+    accent: "#fbbf24",
+    light: "#fde68a",
+    dark: "#d97706",
+    bg: "rgba(245, 158, 11, 0.15)",
+    border: "rgba(245, 158, 11, 0.4)",
+    glow: "rgba(245, 158, 11, 0.35)",
+    gradientStart: "#fbbf24",
+    gradientMid: "#f97316",
+    gradientEnd: "#ef4444",
+  },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState<ThemePreset>(themes[0]);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const applyTheme = (theme: ThemePreset) => {
+    setSelectedTheme(theme);
+    if (typeof document !== "undefined") {
+      const root = document.documentElement;
+      root.setAttribute("data-theme", theme.id);
+      root.style.setProperty("--theme-accent", theme.accent);
+      root.style.setProperty("--theme-accent-light", theme.light);
+      root.style.setProperty("--theme-accent-dark", theme.dark);
+      root.style.setProperty("--theme-accent-bg", theme.bg);
+      root.style.setProperty("--theme-accent-border", theme.border);
+      root.style.setProperty("--theme-accent-glow", theme.glow);
+      root.style.setProperty("--theme-gradient-start", theme.gradientStart);
+      root.style.setProperty("--theme-gradient-mid", theme.gradientMid);
+      root.style.setProperty("--theme-gradient-end", theme.gradientEnd);
+      try {
+        localStorage.setItem("portfolio-theme", theme.id);
+      } catch {}
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    try {
+      const saved = localStorage.getItem("portfolio-theme");
+      if (saved) {
+        const found = themes.find((t) => t.id === saved.toLowerCase());
+        if (found) {
+          applyTheme(found);
+        }
+      }
+    } catch {}
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const navLinks = [
@@ -25,95 +150,205 @@ export default function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
-  const handleResumeClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // Single-click download or open if ready
-    alert("Resume download triggered! (Resume file can be connected to /resume.pdf)");
-  };
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#060913]/85 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20 py-3.5"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
+    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto bg-[#070d1c]/90 backdrop-blur-xl border border-white/10 rounded-full px-4 sm:px-6 py-2.5 shadow-2xl shadow-black/50 flex items-center justify-between transition-all">
+        
+        {/* Brand Title: Portfolio */}
+        <a
+          href="#"
+          className="font-serif font-bold text-base sm:text-lg text-white tracking-wide transition-colors flex items-center gap-2"
+        >
+          <span>Portfolio</span>
+        </a>
+
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-1">
           <a
             href="#"
-            className="flex items-center gap-2 group font-heading font-bold text-xl tracking-tight text-white"
+            className="px-3.5 py-1 rounded-full font-bold text-xs shadow-sm transition-all theme-btn-primary"
           >
-            <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-black text-lg shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              SR
-            </span>
-            <span className="hidden sm:inline font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors">
-              {personalInfo.name}
-            </span>
+            Home
           </a>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1.5 lg:gap-2 bg-white/[0.03] border border-white/10 px-4 py-1.5 rounded-full backdrop-blur-md">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-full hover:bg-white/[0.06] transition-all"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
-          {/* Right Actions: Resume Button & Mobile Toggle */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handleResumeClick}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
-              title="Download Samiha Rahman's Resume"
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="px-3 py-1 text-xs font-medium text-slate-300 hover:text-white transition-colors"
             >
-              <FileDown className="w-4 h-4" />
-              <span>Download Resume</span>
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* Right Actions: Theme Dropdown & Mobile Toggle */}
+        <div className="flex items-center gap-2">
+          
+          {/* Anchored Theme Popover Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              type="button"
+              onClick={() => setDropdownOpen((prev) => !prev)}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] border border-white/15 hover:border-cyan-400/50 text-white text-xs font-semibold transition-all cursor-pointer shadow-md select-none"
+              title="Click to open theme color options"
+              aria-label="Theme options"
+              aria-expanded={dropdownOpen}
+            >
+              <Palette
+                className="w-4 h-4 transition-transform group-hover:rotate-45"
+                style={{ color: selectedTheme.accent }}
+              />
+              <span className="hidden sm:inline font-medium text-slate-200">Theme</span>
+              <span
+                className="w-2.5 h-2.5 rounded-full"
+                style={{
+                  backgroundColor: selectedTheme.accent,
+                  boxShadow: `0 0 8px ${selectedTheme.glow}`,
+                }}
+              />
+              <ChevronDown
+                className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
+                  dropdownOpen ? "rotate-180 text-white" : ""
+                }`}
+              />
             </button>
 
-            {/* Mobile Hamburger Toggle */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 md:hidden transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Pop-up Colors Dropdown Menu */}
+            {dropdownOpen && (
+              <div className="absolute right-0 top-full mt-3 w-72 sm:w-80 bg-[#0a1224] border-2 border-white/20 rounded-3xl p-4 shadow-2xl shadow-black/90 z-50 backdrop-blur-2xl">
+                
+                {/* Pop-up Header */}
+                <div className="flex items-center justify-between pb-3 mb-2 border-b border-white/10">
+                  <div className="flex items-center gap-2">
+                    <Palette className="w-4 h-4" style={{ color: selectedTheme.accent }} />
+                    <span className="text-xs font-bold uppercase tracking-wider text-white">Theme Colors</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setDropdownOpen(false)}
+                    className="p-1 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+
+                {/* Pop-up Options List */}
+                <div className="space-y-1.5">
+                  {themes.map((theme) => {
+                    const isSelected = selectedTheme.id === theme.id;
+                    return (
+                      <button
+                        key={theme.id}
+                        type="button"
+                        onClick={() => {
+                          applyTheme(theme);
+                          setDropdownOpen(false);
+                        }}
+                        className={`w-full flex items-center justify-between p-2.5 rounded-xl border transition-all cursor-pointer text-left ${
+                          isSelected
+                            ? "bg-white/10 border-white/30 shadow-md"
+                            : "bg-white/[0.02] border-white/5 hover:bg-white/[0.08] hover:border-white/15"
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <span
+                            className="w-5 h-5 rounded-full shadow-md flex-shrink-0"
+                            style={{
+                              backgroundColor: theme.accent,
+                              boxShadow: `0 0 10px ${theme.glow}`,
+                            }}
+                          />
+                          <span className="text-xs sm:text-sm font-semibold text-slate-100">
+                            {theme.name}
+                          </span>
+                        </div>
+
+                        {isSelected ? (
+                          <span
+                            className="flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full"
+                            style={{
+                              backgroundColor: theme.bg,
+                              color: theme.accent,
+                              border: `1px solid ${theme.border}`,
+                            }}
+                          >
+                            <Check className="w-3 h-3" />
+                            <span>Active</span>
+                          </span>
+                        ) : (
+                          <span className="text-[11px] text-slate-400 font-medium">Select</span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+              </div>
+            )}
           </div>
+
+          {/* Mobile Menu Hamburger Toggle */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10 md:hidden transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
+
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0a1020]/95 border-b border-white/10 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2 mt-2">
+        <div className="max-w-4xl mx-auto md:hidden bg-[#070d1c]/95 border border-white/10 backdrop-blur-2xl px-5 py-4 rounded-3xl space-y-2 mt-2 shadow-2xl shadow-black/60">
+          <a
+            href="#"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3.5 py-2 rounded-xl text-xs font-bold theme-btn-primary"
+          >
+            Home
+          </a>
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors"
+              className="block px-3.5 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-2">
-            <button
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleResumeClick(e);
-              }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
-            >
-              <FileDown className="w-4 h-4" />
-              <span>Download Resume</span>
-            </button>
+
+          {/* Mobile Theme Options */}
+          <div className="pt-3 border-t border-white/10 space-y-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block px-1">
+              Choose Theme Accent:
+            </span>
+            <div className="grid grid-cols-2 gap-2">
+              {themes.map((theme) => (
+                <button
+                  key={theme.id}
+                  type="button"
+                  onClick={() => {
+                    applyTheme(theme);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`flex items-center gap-2 p-2 rounded-xl border text-left text-xs font-medium transition-all ${
+                    selectedTheme.id === theme.id
+                      ? "bg-white/15 border-white/30 text-white font-bold"
+                      : "bg-white/[0.03] border-white/10 text-slate-300"
+                  }`}
+                >
+                  <span
+                    className="w-3.5 h-3.5 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: theme.accent }}
+                  />
+                  <span className="truncate">{theme.name}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
