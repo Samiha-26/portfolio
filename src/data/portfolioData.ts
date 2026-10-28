@@ -2,8 +2,8 @@ import { Project, SkillCategory, Education, Certificate, Experience } from "../t
 
 export const personalInfo = {
   name: "Samiha Rahman",
-  role: "Full-Stack Web Developer",
-  tagline: "CSE Student & Aspiring Full-Stack Developer building responsive, user-friendly digital experiences.",
+  role: "Frontend Developer & CSE Undergraduate Student",
+  tagline: "CSE Student & Aspiring Frontend Developer building responsive, user-friendly digital experiences.",
   avatar: "/assets/avatar.jpg",
   email: "arthropoda51@gmail.com",
   phone: "+8801788194586",

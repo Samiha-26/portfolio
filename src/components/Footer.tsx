@@ -5,7 +5,15 @@ import { ArrowUp, Github, Linkedin, Mail, Heart } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      const topElem = document.getElementById("top") || document.getElementById("hero");
+      if (topElem) {
+        topElem.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } catch {
+      // Fallback natively to href="#top"
+    }
   };
 
   return (
@@ -23,7 +31,7 @@ export default function Footer() {
                 {personalInfo.name}
               </p>
               <p className="text-xs text-slate-400">
-                Full-Stack Web Developer & CSE Student
+                Frontend Developer & CSE Undergraduate Student
               </p>
             </div>
           </div>
@@ -62,13 +70,15 @@ export default function Footer() {
             <p className="text-xs text-slate-400 flex items-center gap-1">
               Built with Next.js, Tailwind & TypeScript
             </p>
-            <button
+            <a
+              href="#hero"
               onClick={scrollToTop}
-              className="p-2.5 rounded-full bg-white/5 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 border border-white/10 transition-all"
+              className="p-2.5 rounded-full bg-white/5 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 border border-white/10 hover:border-cyan-500/40 transition-all cursor-pointer active:scale-95 group flex items-center justify-center"
               title="Back to Top"
+              aria-label="Back to top"
             >
-              <ArrowUp className="w-4 h-4" />
-            </button>
+              <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
 
         </div>

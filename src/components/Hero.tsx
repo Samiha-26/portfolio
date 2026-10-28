@@ -6,7 +6,7 @@ import { ArrowRight, Github, Linkedin, MessageSquare, Mail } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background radial gradient glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-cyan-500/15 via-indigo-500/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
@@ -19,7 +19,7 @@ export default function Hero() {
             {/* Designation Pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-medium tracking-wide">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              <span>Full-Stack Web Developer & CSE Student</span>
+              <span>Frontend Developer & CSE Undergraduate Student</span>
             </div>
 
             {/* Main Headline */}
