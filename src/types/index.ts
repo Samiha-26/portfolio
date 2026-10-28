@@ -29,7 +29,8 @@ export interface Education {
   location: string;
   period: string;
   status: string;
-  details: string[];
+  result?: string;
+  details?: string[];
 }
 
 export interface Certificate {

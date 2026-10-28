@@ -161,11 +161,7 @@ export const educationData: Education[] = [
     location: "Sylhet, Bangladesh",
     period: "2023 – Present",
     status: "3rd Year Undergraduate",
-    details: [
-      "Core coursework: Data Structures, Algorithms, Database Management Systems, Object Oriented Programming, Software Engineering, and Web Technologies.",
-      "Active participant in technical seminars, student research conferences, and hackathons.",
-      "Developing production-ready web platforms with modern frontend frameworks and backend systems."
-    ]
+    result: "Current CGPA: 3.85 / 4.00",
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
@@ -173,9 +169,7 @@ export const educationData: Education[] = [
     location: "Sylhet, Bangladesh",
     period: "Completed",
     status: "Science Group",
-    details: [
-      "Rigorous science background focusing on Mathematics, Physics, Chemistry, and Information & Communication Technology (ICT)."
-    ]
+    result: "GPA: 5.00 out of 5.00",
   }
 ];
 
