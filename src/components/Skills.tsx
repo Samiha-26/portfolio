@@ -76,49 +76,49 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-[11px] font-semibold uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" />
             <span>Technical Proficiency</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
             Skills & Technologies
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-400 text-xs sm:text-sm">
             Modern tools, languages, and frameworks I use to engineer full-stack web applications.
           </p>
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skillsData.map((category) => (
             <div
               key={category.title}
-              className="glass-card rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-cyan-500/30 transition-all flex flex-col justify-between"
+              className="glass-card rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-cyan-500/30 transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between pb-5 mb-5 border-b border-white/10">
-                  <h3 className="text-lg font-bold text-white tracking-tight">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                  <h3 className="text-sm sm:text-base font-semibold text-white tracking-tight">
                     {category.title}
                   </h3>
-                  <span className="text-xs px-2.5 py-1 rounded-full bg-white/5 text-slate-400 border border-white/10">
+                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/10">
                     {category.skills.length} skills
                   </span>
                 </div>
 
                 {/* Skill Icon Badges */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2.5">
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className={`group p-3 rounded-2xl border transition-all flex items-center gap-3 ${
+                      className={`group p-2.5 rounded-xl border transition-all flex items-center gap-2.5 ${
                         skill.highlight
                           ? "bg-white/[0.04] border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/[0.08]"
                           : "bg-white/[0.02] border-white/5 hover:border-white/20 hover:bg-white/[0.05]"
                       }`}
                     >
                       <TechIcon name={skill.name} />
-                      <span className="text-xs sm:text-sm font-medium text-slate-200 group-hover:text-white transition-colors truncate">
+                      <span className="text-xs font-medium text-slate-200 group-hover:text-white transition-colors truncate">
                         {skill.name}
                       </span>
                     </div>
@@ -126,8 +126,8 @@ export default function Skills() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/5 flex items-center gap-2 text-xs text-slate-400">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+              <div className="pt-4 mt-5 border-t border-white/5 flex items-center gap-2 text-[11px] text-slate-400">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Hands-on project experience</span>
               </div>
             </div>

@@ -10,36 +10,36 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-bold uppercase tracking-widest shadow-sm">
+        <div className="text-center max-w-2xl mx-auto space-y-2.5 mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-[11px] font-semibold uppercase tracking-wider shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
             <span>ABOUT ME</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
             Who I Am & What Drives Me
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-400 text-xs sm:text-sm">
             A quick glimpse into my academic journey, passion for code, and life outside tech.
           </p>
         </div>
 
         {/* Two Balanced Story Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
           
           {/* Card 1: Programming Journey */}
-          <div className="rounded-3xl p-7 sm:p-9 bg-gradient-to-br from-[#0c162c] via-[#091122] to-[#060b17] border border-cyan-500/20 hover:border-cyan-400/40 shadow-xl shadow-black/40 transition-all duration-300 flex flex-col justify-between space-y-6 group">
-            <div className="space-y-4">
-              <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-inner p-3 w-fit">
-                <Code2 className="w-6 h-6" />
+          <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-[#0c162c] via-[#091122] to-[#060b17] border border-cyan-500/20 hover:border-cyan-400/40 shadow-xl shadow-black/40 transition-all duration-300 flex flex-col justify-between space-y-5 group">
+            <div className="space-y-3.5">
+              <div className="rounded-xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-inner p-2.5 w-fit">
+                <Code2 className="w-5 h-5" />
               </div>
               
-              <h3 className="text-2xl font-heading font-bold text-white tracking-tight group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-lg sm:text-xl font-heading font-bold text-white tracking-tight group-hover:text-cyan-300 transition-colors">
                 The Coding Journey
               </h3>
 
-              <div className="space-y-3.5 text-slate-300 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-3 text-slate-300 text-xs sm:text-sm leading-relaxed">
                 <p>
-                  I'm currently in my 3rd year studying Computer Science and Engineering at <strong className="text-white font-semibold">Metropolitan University, Sylhet</strong>.
+                  I'm currently in my 3rd year studying Computer Science and Engineering at <strong className="text-white font-medium">Metropolitan University, Sylhet</strong>.
                 </p>
                 <p>
                   I love web development because it bridges logic and design. There is something deeply satisfying about taking an idea from a blank screen to a functional, responsive application that users can interact with seamlessly.
@@ -50,26 +50,26 @@ export default function About() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-medium text-slate-400">
-              <Compass className="w-4 h-4 text-cyan-400" />
+            <div className="pt-3.5 border-t border-white/10 flex items-center gap-2 text-[11px] font-medium text-slate-400">
+              <Compass className="w-3.5 h-3.5 text-cyan-400" />
               <span>Dedicated to continuous learning & clean code</span>
             </div>
           </div>
 
           {/* Card 2: Cozy Yarn & Creativity */}
-          <div className="rounded-3xl p-7 sm:p-9 bg-gradient-to-br from-[#1a0e1e] via-[#100a18] to-[#070710] border border-pink-500/25 hover:border-pink-400/50 shadow-xl shadow-black/40 transition-all duration-300 flex flex-col justify-between space-y-6 group">
-            <div className="space-y-4">
-              <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 shadow-inner p-3 w-fit">
-                <Heart className="w-6 h-6" />
+          <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-[#1a0e1e] via-[#100a18] to-[#070710] border border-pink-500/25 hover:border-pink-400/50 shadow-xl shadow-black/40 transition-all duration-300 flex flex-col justify-between space-y-5 group">
+            <div className="space-y-3.5">
+              <div className="rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 shadow-inner p-2.5 w-fit">
+                <Heart className="w-5 h-5" />
               </div>
 
-              <h3 className="text-2xl font-heading font-bold text-white tracking-tight group-hover:text-pink-300 transition-colors">
+              <h3 className="text-lg sm:text-xl font-heading font-bold text-white tracking-tight group-hover:text-pink-300 transition-colors">
                 Beyond the Screen: Cozy Yarn
               </h3>
 
-              <div className="space-y-3.5 text-slate-300 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-3 text-slate-300 text-xs sm:text-sm leading-relaxed">
                 <p>
-                  When I'm not writing code, you'll usually find me crocheting. I run <strong className="text-pink-300 font-semibold">Cozy Yarn</strong>, my small handmade crochet venture where I design and craft custom pieces.
+                  When I'm not writing code, you'll usually find me crocheting. I run <strong className="text-pink-300 font-medium">Cozy Yarn</strong>, my small handmade crochet venture where I design and craft custom pieces.
                 </p>
                 <p>
                   Crochet taught me that great things take patience, precision, and attention to small details — lessons that naturally shape how I approach building smooth UI components and debugging complex problems.
@@ -81,14 +81,14 @@ export default function About() {
             </div>
 
             {/* Aesthetic Tag Pills */}
-            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-              <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-pink-500/15 text-pink-300 border border-pink-500/30">
+            <div className="flex flex-wrap gap-1.5 pt-3.5 border-t border-white/10">
+              <span className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-pink-500/15 text-pink-300 border border-pink-500/30">
                 🧶 Handcrafted Crochet
               </span>
-              <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/30">
+              <span className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-purple-500/15 text-purple-300 border border-purple-500/30">
                 🎨 Creative Aesthetics
               </span>
-              <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+              <span className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                 ⏳ Time Management
               </span>
             </div>

@@ -17,13 +17,13 @@ export default function Hero() {
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
             
             {/* Designation Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs sm:text-sm font-medium tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-medium tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               <span>Full-Stack Web Developer & CSE Student</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
               Hi, I am{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400">
                 {personalInfo.name}
@@ -31,18 +31,18 @@ export default function Hero() {
             </h1>
 
             {/* Action Buttons: View Featured Projects & Get In Touch (No duplicate resume button) */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-medium text-xs sm:text-sm shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/35 transform hover:-translate-y-0.5 transition-all"
               >
                 <span>View Featured Projects</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-slate-200 font-semibold text-sm sm:text-base transition-all hover:border-cyan-500/40"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-slate-200 font-medium text-xs sm:text-sm transition-all hover:border-cyan-500/40"
               >
                 <span>Get In Touch</span>
               </a>
@@ -76,16 +76,7 @@ export default function Hero() {
                 <Linkedin className="w-5 h-5" />
               </a>
 
-              {/* WhatsApp */}
-              <a
-                href={personalInfo.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 rounded-full bg-white/5 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-300 border border-white/10 hover:border-emerald-500/40 transition-all transform hover:scale-110"
-                title="WhatsApp Direct Chat"
-              >
-                <MessageSquare className="w-5 h-5" />
-              </a>
+
 
               {/* Email */}
               <a

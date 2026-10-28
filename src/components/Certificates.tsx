@@ -14,32 +14,32 @@ export default function Certificates() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-[11px] font-semibold uppercase tracking-wider">
             <Award className="w-3.5 h-3.5" />
             <span>Certifications & Achievements</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
             Bootcamps & Technical Qualifications
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-400 text-xs sm:text-sm">
             Recognitions from web development bootcamps, student research conferences, and technical seminars.
           </p>
         </div>
 
         {/* Certificate Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {certificatesData.map((cert) => (
             <div
               key={cert.id}
-              className="glass-card rounded-3xl overflow-hidden border border-white/10 hover:border-amber-500/40 transition-all flex flex-col justify-between group"
+              className="glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-amber-500/40 transition-all flex flex-col justify-between group"
             >
               <div>
                 {/* Certificate Preview Image */}
                 {cert.image && (
                   <div
                     onClick={() => setActiveCert(cert)}
-                    className="relative w-full h-48 bg-slate-900 cursor-pointer overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
+                    className="relative w-full h-44 sm:h-48 bg-slate-900 cursor-pointer overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
                     title="Click to view full certificate"
                   >
                     <Image
@@ -52,35 +52,35 @@ export default function Certificates() {
                 )}
 
                 {/* Content */}
-                <div className="p-6 space-y-3">
-                  <div className="flex items-center gap-2 text-xs text-amber-300 font-medium">
-                    <Building2 className="w-3.5 h-3.5" />
+                <div className="p-5 space-y-2.5">
+                  <div className="flex items-center gap-1.5 text-[11px] text-amber-300 font-medium">
+                    <Building2 className="w-3 h-3" />
                     <span>{cert.issuer}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white leading-snug group-hover:text-amber-300 transition-colors">
+                  <h3 className="text-sm sm:text-base font-semibold text-white leading-snug group-hover:text-amber-300 transition-colors">
                     {cert.title}
                   </h3>
 
                   {cert.theme && (
-                    <p className="text-xs text-slate-400 italic">
+                    <p className="text-[11px] text-slate-400 italic">
                       "{cert.theme}"
                     </p>
                   )}
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pt-1">
+                  <p className="text-xs text-slate-300 leading-relaxed pt-0.5">
                     {cert.description}
                   </p>
                 </div>
               </div>
 
               {/* Date & Verified Badge (Clean footer, no View Image button) */}
-              <div className="p-6 pt-3 pb-5 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-                <span className="flex items-center gap-1.5 font-medium text-slate-300">
-                  <Calendar className="w-3.5 h-3.5 text-amber-400" />
+              <div className="p-5 pt-2.5 pb-4 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+                <span className="flex items-center gap-1 font-medium text-slate-300">
+                  <Calendar className="w-3 h-3 text-amber-400" />
                   <span>{cert.date}</span>
                 </span>
-                <span className="text-[11px] text-amber-400/90 font-medium px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">
+                <span className="text-[10px] text-amber-400/90 font-medium px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">
                   Verified Credential
                 </span>
               </div>
