@@ -177,23 +177,13 @@ export const experienceData: Experience[] = [
   {
     role: "Founder & Creative Lead",
     organization: "Cozy Yarn",
-    period: "Ongoing",
+    period: "2023 – Present",
     type: "Entrepreneurship & Creative Design",
     description: [
-      "Founded and manage an independent handcrafted crochet small business.",
-      "Oversee end-to-end product design, brand identity, inventory management, and digital client communication.",
-      "Cultivated disciplined time management, balancing university software engineering academics with entrepreneurship."
-    ]
-  },
-  {
-    role: "Full-Stack Web Developer (Projects & Open Source)",
-    organization: "Independent & Academic Platforms",
-    period: "2024 – Present",
-    type: "Software Engineering",
-    description: [
-      "Engineered multiple responsive web applications including Bazar Dor, Dev Stack, and FoodBridge.",
-      "Implemented secure JWT & OAuth authentication flows, RESTful APIs, and MongoDB schemas.",
-      "Optimized frontend performance, accessibility, and fluid responsive design across mobile and desktop viewports."
+      "Founded and manage Cozy Yarn, an independent handcrafted crochet small business designing and delivering custom creations.",
+      "Direct end-to-end product design, brand visual identity, digital customer communication, and inventory management.",
+      "Cultivated disciplined time management, patience, and customer empathy while balancing university software engineering academics."
     ]
   }
 ];
+
