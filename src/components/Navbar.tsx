@@ -89,6 +89,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const [selectedTheme, setSelectedTheme] = useState<ThemePreset>(themes[0]);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -115,8 +116,28 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      const sectionIds = ["contact", "education", "certificates", "projects", "skills", "experience", "about", "hero"];
+      const scrollY = window.scrollY;
+
+      if (scrollY < 200) {
+        setActiveSection("home");
+        return;
+      }
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 240 && rect.bottom >= 120) {
+            setActiveSection(id === "hero" ? "home" : id);
+            return;
+          }
+        }
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
     try {
       const saved = localStorage.getItem("portfolio-theme");
@@ -163,23 +184,37 @@ export default function Navbar() {
           <span>Portfolio</span>
         </a>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links with Scroll Spy */}
         <nav className="hidden md:flex items-center gap-1">
           <a
             href="#"
-            className="px-3.5 py-1 rounded-full font-bold text-xs shadow-sm transition-all theme-btn-primary"
+            onClick={() => setActiveSection("home")}
+            className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+              activeSection === "home"
+                ? "theme-btn-primary shadow-sm"
+                : "text-slate-300 hover:text-white hover:bg-white/[0.05]"
+            }`}
           >
             Home
           </a>
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="px-3 py-1 text-xs font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const sectionId = link.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setActiveSection(sectionId)}
+                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                  isActive
+                    ? "theme-btn-primary shadow-sm"
+                    : "text-slate-300 hover:text-white hover:bg-white/[0.05]"
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Right Actions: Theme Dropdown & Mobile Toggle */}
@@ -306,21 +341,39 @@ export default function Navbar() {
         <div className="max-w-4xl mx-auto md:hidden bg-[#070d1c]/95 border border-white/10 backdrop-blur-2xl px-5 py-4 rounded-3xl space-y-2 mt-2 shadow-2xl shadow-black/60">
           <a
             href="#"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3.5 py-2 rounded-xl text-xs font-bold theme-btn-primary"
+            onClick={() => {
+              setActiveSection("home");
+              setMobileMenuOpen(false);
+            }}
+            className={`block px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
+              activeSection === "home"
+                ? "theme-btn-primary"
+                : "text-slate-300 hover:text-white hover:bg-white/5"
+            }`}
           >
             Home
           </a>
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3.5 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const sectionId = link.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => {
+                  setActiveSection(sectionId);
+                  setMobileMenuOpen(false);
+                }}
+                className={`block px-3.5 py-2 text-xs font-medium rounded-xl transition-all ${
+                  isActive
+                    ? "theme-btn-primary"
+                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
 
           {/* Mobile Theme Options */}
           <div className="pt-3 border-t border-white/10 space-y-2">
