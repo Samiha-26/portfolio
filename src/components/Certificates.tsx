@@ -20,10 +20,10 @@ export default function Certificates() {
             <span>Certifications & Achievements</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">
-            Research Conferences & Bootcamps
+            Bootcamps & Technical Qualifications
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Recognitions from student research conferences, web development bootcamps, and technical seminars.
+            Recognitions from web development bootcamps, student research conferences, and technical seminars.
           </p>
         </div>
 
@@ -35,11 +35,12 @@ export default function Certificates() {
               className="glass-card rounded-3xl overflow-hidden border border-white/10 hover:border-amber-500/40 transition-all flex flex-col justify-between group"
             >
               <div>
-                {/* Certificate Preview Image or Stylized Badge */}
-                {cert.image ? (
+                {/* Certificate Preview Image */}
+                {cert.image && (
                   <div
                     onClick={() => setActiveCert(cert)}
                     className="relative w-full h-48 bg-slate-900 cursor-pointer overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
+                    title="Click to view full certificate"
                   >
                     <Image
                       src={cert.image}
@@ -47,23 +48,6 @@ export default function Certificates() {
                       fill
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-medium text-white border border-white/20">
-                        Click to Zoom
-                      </span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="w-full h-48 bg-gradient-to-br from-indigo-950/40 via-slate-900 to-[#060913] border-b border-white/10 flex flex-col items-center justify-center p-6 text-center space-y-2">
-                    <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                      <Award className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs uppercase font-bold tracking-widest text-amber-300">
-                      Official Seminar Participation
-                    </span>
-                    <span className="text-[11px] text-slate-400">
-                      BSMRAAU Avionics & Robotics Club
-                    </span>
                   </div>
                 )}
 
@@ -90,21 +74,15 @@ export default function Certificates() {
                 </div>
               </div>
 
-              {/* Date & Zoom Button */}
-              <div className="p-6 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-                <span className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-slate-500" />
+              {/* Date & Verified Badge (Clean footer, no View Image button) */}
+              <div className="p-6 pt-3 pb-5 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+                <span className="flex items-center gap-1.5 font-medium text-slate-300">
+                  <Calendar className="w-3.5 h-3.5 text-amber-400" />
                   <span>{cert.date}</span>
                 </span>
-                {cert.image && (
-                  <button
-                    onClick={() => setActiveCert(cert)}
-                    className="text-amber-400 hover:text-amber-300 font-medium flex items-center gap-1"
-                  >
-                    <span>View Image</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </button>
-                )}
+                <span className="text-[11px] text-amber-400/90 font-medium px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">
+                  Verified Credential
+                </span>
               </div>
             </div>
           ))}
