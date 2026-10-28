@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { projectsData } from "@/data/portfolioData";
 import { Project } from "@/types";
 import ProjectModal from "./ProjectModal";
@@ -35,8 +36,12 @@ export default function Projects() {
               className="group rounded-3xl bg-[#0b1220]/80 border border-white/10 hover:border-cyan-500/40 backdrop-blur-xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 transform hover:-translate-y-1"
             >
               <div>
-                {/* Screenshot & Top Floating Badge Container */}
-                <div className="relative w-full h-52 sm:h-56 bg-slate-900 overflow-hidden border-b border-white/10">
+                {/* Screenshot & Top Floating Badge Container (Clickable Link) */}
+                <Link 
+                  href={`/projects/${project.id}`}
+                  className="block relative w-full h-52 sm:h-56 bg-slate-900 overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
+                  title="Click to view details and challenges"
+                >
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -44,19 +49,21 @@ export default function Projects() {
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   
-                  {/* Floating Pill Status Badge (Just like in the reference photo) */}
+                  {/* Floating Pill Status Badge */}
                   <div className="absolute top-3 right-3 z-10 px-3 py-1 rounded-full bg-[#060913]/85 backdrop-blur-md border border-white/15 text-[11px] font-semibold text-slate-200 tracking-wide shadow-lg">
                     {project.badge}
                   </div>
-                </div>
+                </Link>
 
                 {/* Content Block */}
                 <div className="p-6 space-y-4">
                   {/* Title & Subtitle */}
                   <div>
-                    <h3 className="text-xl font-heading font-bold text-white group-hover:text-cyan-300 transition-colors">
-                      {project.title}
-                    </h3>
+                    <Link href={`/projects/${project.id}`}>
+                      <h3 className="text-xl font-heading font-bold text-white hover:text-cyan-300 transition-colors">
+                        {project.title}
+                      </h3>
+                    </Link>
                   </div>
 
                   {/* Description */}
@@ -104,14 +111,14 @@ export default function Projects() {
                   </a>
                 </div>
 
-                {/* View Details / Challenges Button (Requirement #9) */}
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="w-full text-center py-1.5 text-xs text-slate-400 hover:text-cyan-300 flex items-center justify-center gap-1.5 transition-colors font-medium"
+                {/* View Details Page Link (Requirement #9) */}
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="w-full text-center py-2 px-3 rounded-xl bg-white/[0.04] hover:bg-cyan-500/15 border border-white/10 hover:border-cyan-500/40 text-xs text-slate-300 hover:text-cyan-300 flex items-center justify-center gap-2 transition-all font-medium group/btn shadow-sm"
                 >
-                  <Info className="w-3.5 h-3.5" />
-                  <span>View Details & Challenges</span>
-                </button>
+                  <Info className="w-3.5 h-3.5 text-cyan-400 group-hover/btn:scale-110 transition-transform" />
+                  <span>View Details & Challenges ↗</span>
+                </Link>
               </div>
 
             </div>
