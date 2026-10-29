@@ -9,19 +9,11 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Initialize theme mode & handle scroll spy
+  // Sync theme mode state & handle scroll spy
   useEffect(() => {
     try {
-      const savedMode = localStorage.getItem("portfolio-mode");
-      if (savedMode === "light") {
-        setIsDarkMode(false);
-        document.documentElement.classList.remove("dark");
-        document.documentElement.classList.add("light");
-      } else {
-        setIsDarkMode(true);
-        document.documentElement.classList.add("dark");
-        document.documentElement.classList.remove("light");
-      }
+      const isLight = document.documentElement.classList.contains("light");
+      setIsDarkMode(!isLight);
     } catch {}
 
     const handleScroll = () => {

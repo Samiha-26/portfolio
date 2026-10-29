@@ -46,13 +46,16 @@ export default function About() {
 
               <div className="space-y-3.5 text-slate-300 text-xs sm:text-sm leading-relaxed">
                 <p>
-                  I'm currently in my 4th year studying Computer Science and Engineering at <strong className="text-white font-semibold">Metropolitan University, Sylhet</strong>.
+                  I'm currently in my fourth year of Computer Science and Engineering at <strong className="text-white font-semibold">Metropolitan University, Sylhet</strong>.
                 </p>
                 <p>
-                  I love web development because it bridges logic and design. There is something deeply satisfying about taking an idea from a blank screen to a functional, responsive application that users can interact with seamlessly.
+                  Honestly, coding wasn't something I was really interested in when I first started my bachelor's degree. That changed when I started exploring different websites and wondering how everything worked behind the scenes. I've always loved being creative and coming up with new ideas, so the UI layouts and all the little details that make a website feel complete naturally caught my attention.
                 </p>
                 <p>
-                  My core technical stack centers on <span className="theme-text-accent font-semibold">React, Next.js, TypeScript, Node.js, Express, MongoDB</span>, and <span className="theme-text-accent font-semibold">Tailwind CSS</span>. I enjoy engineering complete, responsive full-stack web applications from sleek UI components to scalable backend APIs.
+                  I started building small projects for my coursework using different programming languages, and the more I explored, the more I wanted to learn. What I enjoy most is going deeper into how things work, debugging problems, and figuring things out on my own. There's something satisfying about starting with an idea and seeing it turn into something that actually works.
+                </p>
+                <p>
+                  Recently, I've been working with <span className="theme-text-accent font-semibold">React, TypeScript, and Next.js</span>, building projects from scratch and exploring backend development. I also built <strong className="text-white font-semibold">FoodBridge</strong>, a full-stack web application for my Web Programming course to connect surplus restaurant food with local charities. I'm still learning, experimenting, and figuring things out along the way, and that's what makes this journey exciting for me.
                 </p>
               </div>
             </div>

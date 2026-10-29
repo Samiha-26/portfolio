@@ -372,13 +372,93 @@ html.light #projects [class*="bg-\[\#060913\]"] {
   box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25) !important;
 }
 
-/* Project Tech Tags */
-html.light #projects [class*="bg-cyan-950"] {
-  background-color: #e0f2fe !important;
-  border: 1.5px solid #bae6fd !important;
+/* Project Tech Tags & Icons in Light Mode (Cards, Modal, and Detail Page) */
+html.light .project-tech-badge,
+html.light [class*="bg-cyan-950"] {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+  border: 1.5px solid #7dd3fc !important;
   color: #0369a1 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12) !important;
+}
+
+html.light .project-tech-badge:hover,
+html.light [class*="bg-cyan-950"]:hover {
+  background: #bae6fd !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25) !important;
+}
+
+/* Light mode icon adjustments inside project tech badges */
+html.light .project-tech-badge svg.text-white,
+html.light .project-tech-badge svg[class*="text-white"],
+html.light [class*="bg-cyan-950"] svg.text-white,
+html.light [class*="bg-cyan-950"] svg[class*="text-white"] {
+  color: #0f172a !important;
+  fill: #0f172a !important;
+}
+
+html.light .project-tech-badge .text-\[\#61DAFB\],
+html.light .project-tech-badge .text-\[\#38BDF8\],
+html.light [class*="bg-cyan-950"] .text-\[\#61DAFB\],
+html.light [class*="bg-cyan-950"] .text-\[\#38BDF8\] {
+  color: #0284c7 !important;
+  fill: #0284c7 !important;
+}
+
+html.light .project-tech-badge .text-\[\#47A248\],
+html.light [class*="bg-cyan-950"] .text-\[\#47A248\] {
+  color: #16a34a !important;
+  fill: #16a34a !important;
+}
+
+html.light .project-tech-badge [class*="bg-\[\#3178C6\]"],
+html.light [class*="bg-cyan-950"] [class*="bg-\[\#3178C6\]"] {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+html.light .project-tech-badge [class*="bg-\[\#5FA04E\]\/20"],
+html.light [class*="bg-cyan-950"] [class*="bg-\[\#5FA04E\]\/20"] {
+  background-color: #dcfce7 !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+
+html.light .project-tech-badge [class*="bg-slate-500\/20"],
+html.light [class*="bg-cyan-950"] [class*="bg-slate-500\/20"] {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .project-tech-badge [class*="bg-\[\#06B6D4\]\/20"],
+html.light [class*="bg-cyan-950"] [class*="bg-\[\#06B6D4\]\/20"] {
+  background-color: #e0f2fe !important;
+  border: 1px solid #7dd3fc !important;
+  color: #0369a1 !important;
+}
+
+html.light .project-tech-badge [class*="bg-\[\#D63AFF\]\/20"],
+html.light [class*="bg-cyan-950"] [class*="bg-\[\#D63AFF\]\/20"] {
+  background-color: #faf5ff !important;
+  border: 1px solid #d8b4fe !important;
+  color: #7e22ce !important;
+}
+
+/* Back Link on detail page in light mode */
+html.light a[href*="/#projects"] {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
   font-weight: 600 !important;
-  box-shadow: 0 1px 3px rgba(3, 105, 161, 0.08) !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+}
+html.light a[href*="/#projects"]:hover {
+  background-color: #f0f9ff !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
 }
 
 /* Live Demo Button */

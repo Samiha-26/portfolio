@@ -76,7 +76,7 @@ export default function Projects() {
                     {project.tech.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-0.5 rounded-md text-[11px] font-medium bg-cyan-950/40 text-cyan-300 border border-cyan-800/40"
+                        className="project-tech-badge px-2 py-0.5 rounded-md text-[11px] font-medium bg-cyan-950/40 text-cyan-200 border border-cyan-800/40"
                       >
                         {tag}
                       </span>

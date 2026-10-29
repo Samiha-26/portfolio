@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { projectsData } from "@/data/portfolioData";
 import { ArrowLeft, ExternalLink, Github, CheckCircle2, AlertTriangle, Rocket, Sparkles } from "lucide-react";
+import TechMiniIcon from "@/components/TechMiniIcon";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export function generateStaticParams() {
   return projectsData.map((project) => ({
@@ -24,8 +26,8 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Back Link */}
-        <div className="mb-8">
+        {/* Top Navigation Row: Back Link + Theme Toggle */}
+        <div className="flex items-center justify-between mb-8 gap-4">
           <Link
             href="/#projects"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-cyan-300 text-xs sm:text-sm font-medium transition-all"
@@ -33,6 +35,8 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Projects</span>
           </Link>
+
+          <ThemeToggle />
         </div>
 
         {/* Project Header */}
@@ -99,17 +103,18 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
           </div>
 
           {/* Main Technology Stack Used */}
-          <div className="rounded-2xl p-4 sm:p-7 bg-[#0b1220]/80 border border-white/10 space-y-3">
+          <div className="rounded-2xl p-4 sm:p-7 bg-[#0b1220]/80 border border-white/10 space-y-4">
             <h2 className="text-base sm:text-lg font-heading font-bold text-white tracking-tight">
               Main Technology Stack
             </h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2.5">
               {project.tech.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 sm:px-3 py-1 rounded-lg text-xs font-medium bg-cyan-950/40 text-cyan-300 border border-cyan-800/40 shadow-sm"
+                  className="project-tech-badge inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-950/40 text-cyan-200 border border-cyan-800/40 shadow-sm transition-all hover:scale-105"
                 >
-                  {tag}
+                  <TechMiniIcon name={tag} />
+                  <span>{tag}</span>
                 </span>
               ))}
             </div>

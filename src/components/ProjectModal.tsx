@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { Project } from "@/types";
 import { X, ExternalLink, Github, AlertTriangle, Rocket, CheckCircle2 } from "lucide-react";
+import TechMiniIcon from "@/components/TechMiniIcon";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -102,13 +103,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
               Technologies Used
             </h4>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-cyan-500/10 text-cyan-300 border border-cyan-500/20"
+                  className="project-tech-badge inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-cyan-950/40 text-cyan-200 border border-cyan-800/40 shadow-sm"
                 >
-                  {t}
+                  <TechMiniIcon name={t} />
+                  <span>{t}</span>
                 </span>
               ))}
             </div>

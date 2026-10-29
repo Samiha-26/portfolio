@@ -13,10 +13,10 @@ export const personalInfo = {
   resumeUrl: "#",
   location: "Sylhet, Bangladesh",
   bio: [
-    "I'm a 4th-year Computer Science and Engineering student at Metropolitan University, Sylhet, building robust, full-stack web applications.",
-    "I enjoy building responsive, user-friendly web applications that make information accessible and improve everyday digital experiences.",
-    "My current technical focus spans full-stack engineering with React, Next.js, TypeScript, Node.js, Express, and MongoDB, integrating scalable backends and modern authentication architectures.",
-    "Beyond technology, I run Cozy Yarn, my small crochet business. Balancing entrepreneurship with my university studies has sharpened my creativity, patience, time management, and deep customer empathy."
+    "I'm currently in my fourth year of Computer Science and Engineering at Metropolitan University, Sylhet.",
+    "Honestly, coding wasn't something I was really interested in when I first started my bachelor's degree. That changed when I started exploring different websites and wondering how everything worked behind the scenes. I've always loved being creative and coming up with new ideas, so the UI layouts and all the little details naturally caught my attention.",
+    "What I enjoy most is going deeper into how things work, debugging problems, and figuring things out on my own. Starting with an idea and seeing it turn into something that actually works is deeply satisfying.",
+    "Recently, I've been working with React, TypeScript, and Next.js, building projects from scratch and exploring backend development. I also built FoodBridge, a full-stack web application for my Web Programming course to connect surplus restaurant food with charities. Beyond technology, I run Cozy Yarn, my handcrafted crochet small business."
   ]
 };
 
@@ -209,7 +209,7 @@ export const educationData: Education[] = [
 
 export const experienceData: Experience[] = [
   {
-    role: "Founder & Creative Lead",
+    role: "Founder",
     organization: "Cozy Yarn",
     period: "2023 – Present",
     type: "Entrepreneurship & Creative Design",
