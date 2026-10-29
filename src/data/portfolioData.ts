@@ -2,8 +2,8 @@ import { Project, SkillCategory, Education, Certificate, Experience } from "../t
 
 export const personalInfo = {
   name: "Samiha Rahman",
-  role: "Frontend Developer & CSE Undergraduate Student",
-  tagline: "CSE Student & Aspiring Frontend Developer building responsive, user-friendly digital experiences.",
+  role: "Full-Stack Developer & 4th Year CSE Undergraduate Student",
+  tagline: "4th Year CSE Student & Aspiring Full-Stack Developer building responsive, user-friendly digital experiences.",
   avatar: "/assets/avatar.jpg",
   email: "arthropoda51@gmail.com",
   phone: "+8801788194586",
@@ -13,14 +13,34 @@ export const personalInfo = {
   resumeUrl: "#",
   location: "Sylhet, Bangladesh",
   bio: [
-    "I'm a Computer Science and Engineering student at Metropolitan University, Sylhet, working toward becoming a full-stack web developer.",
+    "I'm a 4th-year Computer Science and Engineering student at Metropolitan University, Sylhet, building robust, full-stack web applications.",
     "I enjoy building responsive, user-friendly web applications that make information accessible and improve everyday digital experiences.",
-    "My current technical focus includes HTML, CSS, JavaScript, React, and Next.js. I'm also actively building with authentication and backend architectures to engineer complete, reliable web platforms.",
+    "My current technical focus spans full-stack engineering with React, Next.js, TypeScript, Node.js, Express, and MongoDB, integrating scalable backends and modern authentication architectures.",
     "Beyond technology, I run Cozy Yarn, my small crochet business. Balancing entrepreneurship with my university studies has sharpened my creativity, patience, time management, and deep customer empathy."
   ]
 };
 
 export const projectsData: Project[] = [
+  {
+    id: "fit-log",
+    title: "Fit-Log — Workout Planner",
+    subtitle: "Interactive Workout Planning & Progress Tracking Platform",
+    badge: "Next.js & TypeScript • Live on Vercel",
+    description: "Fit-Log is a responsive workout planning application that helps users browse exercises, organize daily workout plans, save workouts, and track completed exercises through a user-friendly interface.",
+    image: "/assets/projects/fit-log.png",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "DaisyUI", "REST API", "Vercel"],
+    skills: ["TypeScript", "Next.js", "API Integration", "State Management", "Responsive Design", "UI Development"],
+    liveUrl: "https://fit-log-samiha1.vercel.app/",
+    githubUrl: "https://github.com/Samiha-26/fit-log",
+    keyFeatures: [
+      "Browse exercises and view detailed workout information across muscle groups",
+      "Add workouts to a daily plan and mark exercises as completed",
+      "Save workouts for later and prevent duplicate entries",
+      "Sort workouts by duration, calories, or rating"
+    ],
+    challenges: "Architecting synchronized state management for active daily plans and saved workout lists while preventing duplicate entries across dynamic sorting and muscle group filtering.",
+    futurePlans: "Introduce custom workout set creation with rest interval timers, historical weekly workout analytics, and offline workout logging."
+  },
   {
     id: "bazar-dor",
     title: "Bazar Dor — Daily Market",
@@ -85,15 +105,13 @@ export const projectsData: Project[] = [
 
 export const skillsData: SkillCategory[] = [
   {
-    title: "Frontend & UI",
+    title: "Frontend Development",
     skills: [
       { name: "React", icon: "react", highlight: true },
       { name: "Next.js", icon: "nextjs", highlight: true },
-      { name: "TypeScript", icon: "typescript", highlight: true },
-      { name: "JavaScript (ES6+)", icon: "javascript", highlight: true },
+      { name: "Tailwind CSS", icon: "tailwind", highlight: true },
       { name: "HTML5", icon: "html5" },
       { name: "CSS3", icon: "css3" },
-      { name: "Tailwind CSS", icon: "tailwind", highlight: true },
       { name: "DaisyUI", icon: "daisyui" },
     ]
   },
@@ -103,23 +121,31 @@ export const skillsData: SkillCategory[] = [
       { name: "Node.js", icon: "nodejs", highlight: true },
       { name: "Express.js", icon: "express", highlight: true },
       { name: "MongoDB", icon: "mongodb", highlight: true },
-      { name: "Mongoose", icon: "database" },
+      { name: "Mongoose", icon: "mongoose" },
       { name: "REST APIs", icon: "api", highlight: true },
-      { name: "Better Auth", icon: "shield" },
-      { name: "JWT Auth", icon: "key" },
+      { name: "JWT Auth", icon: "jwt" },
     ]
   },
   {
-    title: "Tools & Libraries",
+    title: "Tools & Platforms",
     skills: [
       { name: "Git", icon: "git", highlight: true },
       { name: "GitHub", icon: "github", highlight: true },
-      { name: "Socket.io", icon: "socketio" },
-      { name: "Leaflet Maps", icon: "map" },
+      { name: "VS Code", icon: "vscode", highlight: true },
       { name: "Vite", icon: "vite" },
       { name: "Vercel", icon: "vercel" },
       { name: "Netlify", icon: "netlify" },
-      { name: "VS Code", icon: "code" },
+    ]
+  },
+  {
+    title: "Programming Languages",
+    skills: [
+      { name: "C", icon: "c", highlight: true },
+      { name: "C++", icon: "cpp", highlight: true },
+      { name: "Java", icon: "java", highlight: true },
+      { name: "JavaScript", icon: "javascript", highlight: true },
+      { name: "TypeScript", icon: "typescript", highlight: true },
+      { name: "Python", icon: "python" },
     ]
   }
 ];
@@ -160,16 +186,24 @@ export const educationData: Education[] = [
     institution: "Metropolitan University",
     location: "Sylhet, Bangladesh",
     period: "2023 – Present",
-    status: "3rd Year Undergraduate",
-    result: "Current CGPA: 3.85 / 4.00",
+    status: "4th Year Undergraduate Student",
+    result: "Current CGPA: 3.76 / 4.00",
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
     institution: "Higher Secondary Education Board",
     location: "Sylhet, Bangladesh",
-    period: "Completed",
+    period: "Passing Year: 2022",
     status: "Science Group",
-    result: "GPA: 5.00 out of 5.00",
+    result: "GPA: 5.00 / 5.00",
+  },
+  {
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Secondary Education Board",
+    location: "Sylhet, Bangladesh",
+    period: "Passing Year: 2020",
+    status: "Science Group",
+    result: "GPA: 5.00 / 5.00",
   }
 ];
 
@@ -186,4 +220,3 @@ export const experienceData: Experience[] = [
     ]
   }
 ];
-

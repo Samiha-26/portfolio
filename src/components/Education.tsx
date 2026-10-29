@@ -4,7 +4,7 @@ import { GraduationCap, MapPin, Calendar, Award } from "lucide-react";
 export default function Education() {
   return (
     <section id="education" className="py-20 relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2.5 mb-12">
@@ -16,12 +16,12 @@ export default function Education() {
             Educational Qualification
           </h2>
           <p className="text-slate-400 text-xs sm:text-sm">
-            My formal computer science and higher secondary academic background.
+            My formal computer science, higher secondary, and secondary academic background.
           </p>
         </div>
 
-        {/* Clean, Simple Education Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        {/* Clean, Simple Education Cards (3 Columns for 3 Qualifications) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {educationData.map((edu, idx) => (
             <div
               key={idx}

@@ -31,7 +31,7 @@ export default function Footer() {
                 {personalInfo.name}
               </p>
               <p className="text-xs text-slate-400">
-                Frontend Developer & CSE Undergraduate Student
+                Full-Stack Developer & 4th Year CSE Undergraduate Student
               </p>
             </div>
           </div>

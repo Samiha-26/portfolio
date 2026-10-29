@@ -1,4 +1,4 @@
-import { Sparkles, Code2, Heart, GraduationCap, Compass, Briefcase } from "lucide-react";
+import { Sparkles, Code2, Heart, GraduationCap, Compass, Briefcase, Award } from "lucide-react";
 
 export default function About() {
   return (
@@ -46,13 +46,13 @@ export default function About() {
 
               <div className="space-y-3.5 text-slate-300 text-xs sm:text-sm leading-relaxed">
                 <p>
-                  I'm currently in my 3rd year studying Computer Science and Engineering at <strong className="text-white font-semibold">Metropolitan University, Sylhet</strong>.
+                  I'm currently in my 4th year studying Computer Science and Engineering at <strong className="text-white font-semibold">Metropolitan University, Sylhet</strong>.
                 </p>
                 <p>
                   I love web development because it bridges logic and design. There is something deeply satisfying about taking an idea from a blank screen to a functional, responsive application that users can interact with seamlessly.
                 </p>
                 <p>
-                  My core technical stack centers on <span className="theme-text-accent font-semibold">React, Next.js, TypeScript, JavaScript, HTML5, CSS3</span>, and <span className="theme-text-accent font-semibold">Tailwind CSS</span>. I enjoy turning design concepts into fluid, responsive interfaces while steadily growing my full-stack and backend fundamentals.
+                  My core technical stack centers on <span className="theme-text-accent font-semibold">React, Next.js, TypeScript, Node.js, Express, MongoDB</span>, and <span className="theme-text-accent font-semibold">Tailwind CSS</span>. I enjoy engineering complete, responsive full-stack web applications from sleek UI components to scalable backend APIs.
                 </p>
               </div>
             </div>
@@ -103,35 +103,59 @@ export default function About() {
 
         </div>
 
-        {/* Quick Highlights Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5">
-            <GraduationCap className="w-5 h-5 theme-text-accent mx-auto mb-2 transition-transform group-hover:scale-110" />
-            <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Education</p>
-            <p className="text-xs sm:text-sm font-bold text-white mt-1">3rd Year CSE</p>
-            <p className="text-[11px] text-slate-400 mt-0.5">Metropolitan Univ.</p>
+        {/* Quick Highlights Bar: 5 Balanced Metric Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 mt-8">
+          
+          {/* 1. Education */}
+          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+            <div>
+              <GraduationCap className="w-5 h-5 theme-text-accent mx-auto mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Education</p>
+              <p className="text-xs sm:text-sm font-bold text-white mt-1 leading-snug">4th Year Undergraduate Student</p>
+            </div>
+            <p className="text-[11px] text-slate-400 mt-2">Metropolitan Univ.</p>
           </div>
 
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5">
-            <Code2 className="w-5 h-5 theme-text-accent mx-auto mb-2 transition-transform group-hover:scale-110" />
-            <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Focus Stack</p>
-            <p className="text-xs sm:text-sm font-bold text-white mt-1">Frontend & UI</p>
-            <p className="text-[11px] theme-text-accent mt-0.5">React • Next.js • TS</p>
+          {/* 2. Current CGPA (Between Education and Stack) */}
+          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-emerald-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+            <div>
+              <Award className="w-5 h-5 text-emerald-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Current CGPA</p>
+              <p className="text-xs sm:text-sm font-bold text-emerald-300 mt-1">3.76 / 4.00</p>
+            </div>
+            <p className="text-[11px] text-slate-400 mt-2">Academic Standing</p>
           </div>
 
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-pink-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5">
-            <Heart className="w-5 h-5 text-pink-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
-            <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Venture</p>
-            <p className="text-xs sm:text-sm font-bold text-white mt-1">Cozy Yarn</p>
-            <p className="text-[11px] text-pink-300 mt-0.5">Handcrafted Founder</p>
+          {/* 3. Focus Stack */}
+          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+            <div>
+              <Code2 className="w-5 h-5 theme-text-accent mx-auto mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Focus Stack</p>
+              <p className="text-xs sm:text-sm font-bold text-white mt-1">Full Stack</p>
+            </div>
+            <p className="text-[11px] theme-text-accent mt-2 truncate">MERN • Next.js • TS</p>
           </div>
 
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-emerald-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5">
-            <Briefcase className="w-5 h-5 text-emerald-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
-            <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Status</p>
-            <p className="text-xs sm:text-sm font-bold text-white mt-1">Open for Opportunities</p>
-            <p className="text-[11px] text-emerald-400 mt-0.5">Internship & Projects</p>
+          {/* 4. Venture */}
+          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-pink-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+            <div>
+              <Heart className="w-5 h-5 text-pink-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Venture</p>
+              <p className="text-xs sm:text-sm font-bold text-white mt-1">Cozy Yarn</p>
+            </div>
+            <p className="text-[11px] text-pink-300 mt-2">Handcrafted Founder</p>
           </div>
+
+          {/* 5. Status */}
+          <div className="col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-1 rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-indigo-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+            <div>
+              <Briefcase className="w-5 h-5 text-indigo-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Status</p>
+              <p className="text-xs sm:text-sm font-bold text-white mt-1">Open for Opportunities</p>
+            </div>
+            <p className="text-[11px] text-indigo-300 mt-2">Full-Time & Internships</p>
+          </div>
+
         </div>
 
       </div>

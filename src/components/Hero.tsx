@@ -17,9 +17,9 @@ export default function Hero() {
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
 
             {/* Pill Badge matching reference */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-medium tracking-wide shadow-sm theme-pill transition-colors duration-500">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide shadow-sm theme-pill transition-colors duration-500">
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--theme-accent)" }} />
-              <span>Frontend Developer & CSE Undergraduate Student</span>
+              <span>Aspiring Full-Stack Developer & 4th Year CSE Undergraduate Student</span>
             </div>
 
             {/* Headline matching reference: "Hi," + "I'm Samiha Rahman" */}

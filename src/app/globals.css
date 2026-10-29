@@ -30,8 +30,8 @@
   background: #334155;
 }
 
-/* Dynamic Theme Presets (Cyan default) */
-:root, [data-theme="cyan"] {
+/* Dynamic Theme Presets (Cyan Neon Fixed) */
+:root {
   --theme-accent: #22d3ee;
   --theme-accent-light: #67e8f9;
   --theme-accent-dark: #0891b2;
@@ -43,52 +43,377 @@
   --theme-gradient-end: #a855f7;
 }
 
-[data-theme="purple"] {
-  --theme-accent: #c084fc;
-  --theme-accent-light: #d8b4fe;
-  --theme-accent-dark: #9333ea;
-  --theme-accent-bg: rgba(168, 85, 247, 0.15);
-  --theme-accent-border: rgba(168, 85, 247, 0.35);
-  --theme-accent-glow: rgba(168, 85, 247, 0.35);
-  --theme-gradient-start: #c084fc;
-  --theme-gradient-mid: #ec4899;
+/* Light Mode Global Styles (Enhanced Ice & Cyan Palette) */
+html.light {
+  color-scheme: light;
+  --theme-accent: #0284c7;
+  --theme-accent-light: #0ea5e9;
+  --theme-accent-dark: #0369a1;
+  --theme-accent-bg: rgba(14, 165, 233, 0.1);
+  --theme-accent-border: rgba(14, 165, 233, 0.3);
+  --theme-accent-glow: rgba(14, 165, 233, 0.2);
+  --theme-gradient-start: #06b6d4;
+  --theme-gradient-mid: #3b82f6;
   --theme-gradient-end: #8b5cf6;
 }
 
-[data-theme="emerald"] {
-  --theme-accent: #34d399;
-  --theme-accent-light: #6ee7b7;
-  --theme-accent-dark: #059669;
-  --theme-accent-bg: rgba(16, 185, 129, 0.15);
-  --theme-accent-border: rgba(16, 185, 129, 0.35);
-  --theme-accent-glow: rgba(16, 185, 129, 0.35);
-  --theme-gradient-start: #34d399;
-  --theme-gradient-mid: #06b6d4;
-  --theme-gradient-end: #3b82f6;
+/* Light mode scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
-[data-theme="rose"] {
-  --theme-accent: #fb7185;
-  --theme-accent-light: #fda4af;
-  --theme-accent-dark: #e11d48;
-  --theme-accent-bg: rgba(244, 63, 94, 0.15);
-  --theme-accent-border: rgba(244, 63, 94, 0.35);
-  --theme-accent-glow: rgba(244, 63, 94, 0.35);
-  --theme-gradient-start: #fb7185;
-  --theme-gradient-mid: #f59e0b;
-  --theme-gradient-end: #ec4899;
+html.light body,
+html.light main,
+html.light #top,
+html.light .min-h-screen {
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(6, 182, 212, 0.12) 0px, transparent 45%),
+    radial-gradient(at 85% 18%, rgba(99, 102, 241, 0.09) 0px, transparent 40%),
+    radial-gradient(at 50% 60%, rgba(14, 165, 233, 0.08) 0px, transparent 45%),
+    radial-gradient(at 20% 85%, rgba(244, 63, 94, 0.06) 0px, transparent 40%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 40%, #eef4f9 100%) !important;
+  color: #0f172a !important;
 }
 
-[data-theme="amber"] {
-  --theme-accent: #fbbf24;
-  --theme-accent-light: #fde68a;
-  --theme-accent-dark: #d97706;
-  --theme-accent-bg: rgba(245, 158, 11, 0.15);
-  --theme-accent-border: rgba(245, 158, 11, 0.35);
-  --theme-accent-glow: rgba(245, 158, 11, 0.35);
-  --theme-gradient-start: #fbbf24;
-  --theme-gradient-mid: #f97316;
-  --theme-gradient-end: #ef4444;
+/* Light mode card overrides: Crisp frosted glass with delicate depth */
+html.light .glass-card,
+html.light [class*="bg-[#0a1224]"],
+html.light [class*="bg-[#0b1220]"],
+html.light [class*="bg-[#0b1222]"] {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.07), 0 4px 6px -2px rgba(15, 23, 42, 0.03) !important;
+}
+
+html.light .glass-card:hover,
+html.light [class*="bg-[#0a1224]"]:hover,
+html.light [class*="bg-[#0b1220]"]:hover {
+  border-color: rgba(14, 165, 233, 0.5) !important;
+  box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.18), 0 8px 16px -4px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Special Warm Feature Card (Cozy Yarn Craft in About & Experience) */
+html.light [class*="bg-[#110e1c]"] {
+  background-color: rgba(255, 241, 242, 0.88) !important;
+  border-color: rgba(251, 113, 133, 0.4) !important;
+  box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.1) !important;
+}
+html.light [class*="bg-[#110e1c]"]:hover {
+  border-color: rgba(244, 63, 94, 0.55) !important;
+  box-shadow: 0 20px 35px -10px rgba(244, 63, 94, 0.18) !important;
+}
+
+/* Light mode floating navbar */
+html.light header > div {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 12px 35px -8px rgba(15, 23, 42, 0.09), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+}
+
+html.light header a,
+html.light header span.font-serif {
+  color: #0f172a !important;
+}
+
+html.light header nav a:not(.theme-btn-primary) {
+  color: #475569 !important;
+}
+
+html.light header nav a:not(.theme-btn-primary):hover {
+  background-color: rgba(14, 165, 233, 0.08) !important;
+  color: #0284c7 !important;
+}
+
+html.light header .md\:hidden {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Vibrant Light Mode CTA Button */
+html.light .theme-btn-primary {
+  background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.42) !important;
+}
+html.light .theme-btn-primary:hover {
+  filter: brightness(1.06) !important;
+  box-shadow: 0 14px 28px -5px rgba(2, 132, 199, 0.52) !important;
+}
+
+/* Light mode typography */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+html.light .text-slate-400 {
+  color: #64748b !important;
+}
+html.light strong.text-white {
+  color: #0f172a !important;
+}
+
+/* Light mode borders */
+html.light [class*="border-white"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Light mode secondary action buttons */
+html.light .bg-black\/40 {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04) !important;
+}
+html.light .bg-black\/40:hover {
+  background-color: #f8fafc !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+}
+
+/* Interactive icon buttons & badges */
+html.light [class*="bg-white/"] {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+  border-color: #e2e8f0 !important;
+}
+html.light [class*="bg-white/"]:hover {
+  background-color: rgba(226, 232, 240, 0.95) !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Inputs & Form in light mode */
+html.light input,
+html.light textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) inset !important;
+}
+html.light input:focus,
+html.light textarea:focus {
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15) !important;
+}
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Technology Badges & Pills */
+html.light .theme-pill {
+  background-color: #e0f2fe !important;
+  border-color: #bae6fd !important;
+  color: #0369a1 !important;
+}
+html.light .theme-text-accent {
+  color: #0284c7 !important;
+}
+
+/* High-contrast pastel & accent colors */
+html.light .text-cyan-300,
+html.light .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+html.light .text-pink-300,
+html.light .text-pink-400 {
+  color: #e11d48 !important;
+}
+
+html.light .text-purple-300,
+html.light .text-purple-400 {
+  color: #7e22ce !important;
+}
+
+html.light .text-amber-300,
+html.light .text-amber-400 {
+  color: #b45309 !important;
+}
+
+html.light .text-emerald-300,
+html.light .text-emerald-400 {
+  color: #047857 !important;
+}
+
+html.light .text-indigo-300,
+html.light .text-indigo-400 {
+  color: #4338ca !important;
+}
+
+/* Fix SVG icons in light mode: Next.js white SVG and others */
+html.light svg.text-white,
+html.light svg[class*="text-white"] {
+  color: #0f172a !important;
+  fill: #0f172a !important;
+}
+
+/* Light mode category & skill badges */
+html.light [class*="bg-cyan-950"],
+html.light [class*="bg-cyan-500/10"],
+html.light [class*="bg-cyan-500/15"] {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border-color: #bae6fd !important;
+}
+
+html.light [class*="bg-pink-500/15"],
+html.light [class*="bg-pink-500/20"] {
+  background-color: #ffe4e6 !important;
+  color: #be123c !important;
+  border-color: #fecdd3 !important;
+}
+
+html.light [class*="bg-purple-500/15"],
+html.light [class*="bg-purple-500/30"] {
+  background-color: #f3e8ff !important;
+  color: #6b21a8 !important;
+  border-color: #e9d5ff !important;
+}
+
+html.light [class*="bg-amber-500/10"],
+html.light [class*="bg-amber-500/20"] {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fde68a !important;
+}
+
+html.light [class*="bg-emerald-500/10"],
+html.light [class*="bg-emerald-500/15"],
+html.light [class*="bg-emerald-500/20"] {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+  border-color: #a7f3d0 !important;
+}
+
+html.light [class*="bg-indigo-500/10"],
+html.light [class*="bg-indigo-500/15"] {
+  background-color: #eef2ff !important;
+  color: #3730a3 !important;
+  border-color: #c7d2fe !important;
+}
+
+/* Hero CONNECT social buttons in light mode */
+html.light #hero a.rounded-full:not(.theme-btn-primary) {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+}
+html.light #hero a.rounded-full:not(.theme-btn-primary):hover {
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Projects Section enhancements in light mode */
+html.light #projects a[href*="http"].bg-cyan-500 {
+  background: linear-gradient(135deg, #06b6d4, #0284c7) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
+}
+html.light #projects a[href*="http"].bg-cyan-500:hover {
+  filter: brightness(1.08) !important;
+}
+
+html.light #projects a[href*="github.com"] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04) !important;
+}
+html.light #projects a[href*="github.com"]:hover {
+  background-color: #f8fafc !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+}
+
+html.light #projects a[href^="/projects/"] {
+  background-color: #f0f9ff !important;
+  border-color: #bae6fd !important;
+  color: #0284c7 !important;
+  font-weight: 600 !important;
+}
+html.light #projects a[href^="/projects/"]:hover {
+  background-color: #e0f2fe !important;
+  border-color: #7dd3fc !important;
+  color: #0369a1 !important;
+}
+
+/* Project Detail Callouts */
+html.light [class*="bg-amber-950"] {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+}
+html.light [class*="bg-amber-950"] h2,
+html.light [class*="bg-amber-950"] .text-amber-300 {
+  color: #92400e !important;
+}
+
+html.light [class*="bg-indigo-950"] {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+}
+html.light [class*="bg-indigo-950"] h2,
+html.light [class*="bg-indigo-950"] .text-indigo-300 {
+  color: #3730a3 !important;
+}
+
+/* Media placeholders & overlays */
+html.light .bg-slate-900 {
+  background-color: #f1f5f9 !important;
+}
+html.light [class*="bg-[#060913]"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Light mode footer */
+html.light footer {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef4f9 100%) !important;
+  border-top-color: #e2e8f0 !important;
+  box-shadow: 0 -4px 20px -2px rgba(15, 23, 42, 0.03) !important;
+}
+html.light footer p,
+html.light footer span {
+  color: #64748b !important;
+}
+html.light footer a {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+html.light footer a:hover {
+  background-color: #f1f5f9 !important;
+  color: #0284c7 !important;
+  border-color: #0284c7 !important;
+}
+
+/* Ambient glow in light mode: Watercolor aura */
+html.light .theme-ambient-glow {
+  opacity: 0.3 !important;
+  filter: blur(60px) !important;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%) !important;
 }
 
 /* Glassmorphism Styles */

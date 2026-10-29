@@ -28,8 +28,8 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Project Cards Grid (3 Columns on Desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {/* Project Cards Grid (2x2 Balanced Grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
           {projectsData.map((project) => (
             <div
               key={project.id}
@@ -39,7 +39,7 @@ export default function Projects() {
                 {/* Screenshot & Top Floating Badge Container (Clickable Link) */}
                 <Link 
                   href={`/projects/${project.id}`}
-                  className="block relative w-full h-48 sm:h-52 bg-slate-900 overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
+                  className="block relative w-full h-52 sm:h-60 bg-slate-900 overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
                   title="Click to view details and challenges"
                 >
                   <Image
