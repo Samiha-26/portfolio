@@ -6,12 +6,16 @@
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    overflow-x: hidden;
+    width: 100%;
   }
   body {
     background-color: #060913;
     color: #e2e8f0;
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    overflow-x: clip;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 }
 
@@ -74,78 +78,82 @@ html.light #top,
 html.light .min-h-screen {
   background-color: #f8fafc !important;
   background-image: 
-    radial-gradient(at 15% 15%, rgba(6, 182, 212, 0.12) 0px, transparent 45%),
-    radial-gradient(at 85% 18%, rgba(99, 102, 241, 0.09) 0px, transparent 40%),
-    radial-gradient(at 50% 60%, rgba(14, 165, 233, 0.08) 0px, transparent 45%),
-    radial-gradient(at 20% 85%, rgba(244, 63, 94, 0.06) 0px, transparent 40%),
+    radial-gradient(at 15% 15%, rgba(6, 182, 212, 0.16) 0px, transparent 45%),
+    radial-gradient(at 85% 18%, rgba(99, 102, 241, 0.12) 0px, transparent 40%),
+    radial-gradient(at 50% 60%, rgba(14, 165, 233, 0.1) 0px, transparent 45%),
+    radial-gradient(at 20% 85%, rgba(244, 63, 94, 0.08) 0px, transparent 40%),
     linear-gradient(180deg, #f8fafc 0%, #f1f5f9 40%, #eef4f9 100%) !important;
   color: #0f172a !important;
 }
 
-/* Light mode card overrides: Crisp frosted glass with delicate depth */
+/* Light mode card overrides: Solid crisp white with rich soft elevation */
 html.light .glass-card,
 html.light [class*="bg-[#0a1224]"],
 html.light [class*="bg-[#0b1220]"],
 html.light [class*="bg-[#0b1222]"] {
-  background-color: rgba(255, 255, 255, 0.94) !important;
-  border-color: rgba(226, 232, 240, 0.9) !important;
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.07), 0 4px 6px -2px rgba(15, 23, 42, 0.03) !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.03) !important;
 }
 
 html.light .glass-card:hover,
 html.light [class*="bg-[#0a1224]"]:hover,
 html.light [class*="bg-[#0b1220]"]:hover {
-  border-color: rgba(14, 165, 233, 0.5) !important;
-  box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.18), 0 8px 16px -4px rgba(15, 23, 42, 0.05) !important;
+  border-color: #06b6d4 !important;
+  box-shadow: 0 20px 35px -8px rgba(6, 182, 212, 0.22), 0 6px 12px -3px rgba(6, 182, 212, 0.12) !important;
 }
 
 /* Special Warm Feature Card (Cozy Yarn Craft in About & Experience) */
 html.light [class*="bg-[#110e1c]"] {
-  background-color: rgba(255, 241, 242, 0.88) !important;
-  border-color: rgba(251, 113, 133, 0.4) !important;
-  box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.1) !important;
+  background: linear-gradient(135deg, rgba(255, 241, 242, 0.95), rgba(253, 242, 248, 0.95)) !important;
+  border: 1.5px solid #fecdd3 !important;
+  box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.15) !important;
 }
 html.light [class*="bg-[#110e1c]"]:hover {
-  border-color: rgba(244, 63, 94, 0.55) !important;
-  box-shadow: 0 20px 35px -10px rgba(244, 63, 94, 0.18) !important;
+  border-color: #f43f5e !important;
+  box-shadow: 0 20px 35px -5px rgba(244, 63, 94, 0.25) !important;
 }
 
 /* Light mode floating navbar */
 html.light header > div {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(226, 232, 240, 0.9) !important;
-  box-shadow: 0 12px 35px -8px rgba(15, 23, 42, 0.09), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border: 1.5px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow: 0 14px 35px -8px rgba(15, 23, 42, 0.12) !important;
 }
 
 html.light header a,
 html.light header span.font-serif {
   color: #0f172a !important;
+  font-weight: 800 !important;
 }
 
 html.light header nav a:not(.theme-btn-primary) {
   color: #475569 !important;
+  font-weight: 600 !important;
 }
 
 html.light header nav a:not(.theme-btn-primary):hover {
-  background-color: rgba(14, 165, 233, 0.08) !important;
+  background-color: #f0f9ff !important;
   color: #0284c7 !important;
 }
 
 html.light header .md\:hidden {
   background-color: rgba(255, 255, 255, 0.98) !important;
-  border-color: rgba(226, 232, 240, 0.9) !important;
-  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12) !important;
+  border: 1.5px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.15) !important;
 }
 
 /* Vibrant Light Mode CTA Button */
 html.light .theme-btn-primary {
   background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%) !important;
   color: #ffffff !important;
-  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.42) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 25px -4px rgba(2, 132, 199, 0.45) !important;
 }
 html.light .theme-btn-primary:hover {
-  filter: brightness(1.06) !important;
-  box-shadow: 0 14px 28px -5px rgba(2, 132, 199, 0.52) !important;
+  filter: brightness(1.08) !important;
+  box-shadow: 0 14px 30px -4px rgba(2, 132, 199, 0.6) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Light mode typography */
@@ -178,83 +186,389 @@ html.light [class*="border-white"] {
   border-color: #e2e8f0 !important;
 }
 
-/* Light mode secondary action buttons */
-html.light .bg-black\/40 {
+/* Hero Badge */
+html.light #hero div.inline-flex.rounded-full {
   background-color: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
+  border: 1.5px solid #06b6d4 !important;
   color: #0f172a !important;
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04) !important;
-}
-html.light .bg-black\/40:hover {
-  background-color: #f8fafc !important;
-  border-color: #0284c7 !important;
-  color: #0284c7 !important;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.22) !important;
+  font-weight: 600 !important;
 }
 
-/* Interactive icon buttons & badges */
-html.light [class*="bg-white/"] {
-  background-color: rgba(241, 245, 249, 0.85) !important;
-  border-color: #e2e8f0 !important;
+/* Hero Secondary Buttons (Resume & Contact) */
+html.light #hero a.border-white\/15,
+html.light #hero a.bg-black\/40,
+html.light .bg-black\/40 {
+  background-color: #ffffff !important;
+  border: 1.5px solid #0284c7 !important;
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12) !important;
 }
-html.light [class*="bg-white/"]:hover {
-  background-color: rgba(226, 232, 240, 0.95) !important;
-  border-color: #cbd5e1 !important;
+html.light #hero a.border-white\/15:hover,
+html.light #hero a.bg-black\/40:hover,
+html.light .bg-black\/40:hover {
+  background-color: #f0f9ff !important;
+  border-color: #0369a1 !important;
+  color: #0369a1 !important;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.22) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Hero Social Round Icon Buttons */
+html.light #hero a.rounded-full:not(.theme-btn-primary):not(.border-cyan-500\/30) {
+  background-color: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  color: #1e293b !important;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.08) !important;
+}
+html.light #hero a.rounded-full:not(.theme-btn-primary):not(.border-cyan-500\/30):hover {
+  border-color: #06b6d4 !important;
+  color: #0284c7 !important;
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.28) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ==========================================================================
+   SKILLS SECTION IN LIGHT MODE (Eye-Catching White Cards + Glowing Hovers)
+   ========================================================================== */
+
+/* The 4 Category Cards in Skills */
+html.light #skills .glass-card {
+  background-color: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04) !important;
+}
+html.light #skills .glass-card:hover {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.22) !important;
+}
+
+/* Individual Skill Tiles */
+html.light #skills div[class*="group p-3"] {
+  background-color: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 2px 6px -1px rgba(15, 23, 42, 0.06), 0 1px 3px -1px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light #skills div[class*="group p-3"]:hover {
+  background-color: #ffffff !important;
+  border-color: #06b6d4 !important;
+  box-shadow: 0 14px 28px -4px rgba(6, 182, 212, 0.28), 0 4px 10px -2px rgba(6, 182, 212, 0.14) !important;
+  transform: translateY(-4px) !important;
+}
+
+html.light #skills div[class*="group p-3"] span {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+html.light #skills div[class*="group p-3"]:hover span {
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+}
+
+/* Tech Icon Colors inside Skill Tiles in Light Mode */
+html.light #skills .text-\[\#659AD2\] {
+  color: #00599c !important;
+  font-weight: 800 !important;
+}
+html.light #skills [class*="bg-\[\#00599C\]\/20"] {
+  background-color: rgba(0, 89, 156, 0.12) !important;
+  border: 1.5px solid rgba(0, 89, 156, 0.35) !important;
+  box-shadow: 0 2px 5px rgba(0, 89, 156, 0.15) !important;
+}
+
+html.light #skills .text-\[\#61DAFB\] {
+  color: #0284c7 !important;
+  fill: #0284c7 !important;
+  filter: drop-shadow(0 2px 4px rgba(2, 132, 199, 0.25)) !important;
+}
+
+html.light #skills .text-\[\#38BDF8\] {
+  color: #0284c7 !important;
+  fill: #0284c7 !important;
+  filter: drop-shadow(0 2px 4px rgba(2, 132, 199, 0.25)) !important;
+}
+
+html.light #skills .text-\[\#22D3EE\] {
+  color: #0284c7 !important;
+  font-weight: 800 !important;
+}
+html.light #skills [class*="bg-\[\#06B6D4\]\/20"] {
+  background-color: #e0f2fe !important;
+  border: 1.5px solid #7dd3fc !important;
+  box-shadow: 0 2px 5px rgba(2, 132, 199, 0.15) !important;
+}
+
+html.light #skills .text-\[\#D63AFF\] {
+  color: #9333ea !important;
+  font-weight: 800 !important;
+}
+html.light #skills [class*="bg-\[\#D63AFF\]\/20"] {
+  background-color: #faf5ff !important;
+  border: 1.5px solid #d8b4fe !important;
+  box-shadow: 0 2px 5px rgba(147, 51, 234, 0.15) !important;
+}
+
+html.light #skills .text-\[\#1AD1A5\] {
+  color: #0f766e !important;
+}
+html.light #skills [class*="bg-\[\#1AD1A5\]\/20"] {
+  background-color: #f0fdfa !important;
+  border: 1.5px solid #99f6e4 !important;
+}
+
+html.light #skills .text-\[\#5FA04E\] {
+  color: #15803d !important;
+  font-weight: 800 !important;
+}
+html.light #skills [class*="bg-\[\#5FA04E\]\/20"] {
+  background-color: #f0fdf4 !important;
+  border: 1.5px solid #bbf7d0 !important;
+  box-shadow: 0 2px 5px rgba(21, 128, 61, 0.15) !important;
+}
+
+html.light #skills [class*="bg-slate-500\/20"] {
+  background-color: #f1f5f9 !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+html.light #skills [class*="bg-slate-500\/20"] span {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+html.light #skills [class*="bg-\[\#880000\]\/20"] {
+  background-color: #fef2f2 !important;
+  border: 1.5px solid #fecaca !important;
+  color: #b91c1c !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   PROJECTS SECTION IN LIGHT MODE (Vibrant Badges & High-Contrast Buttons)
+   ========================================================================== */
+
+/* Project Cards */
+html.light #projects .group.rounded-2xl {
+  background-color: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04) !important;
+}
+html.light #projects .group.rounded-2xl:hover {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.22) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Project Image Top-Right Status Badge */
+html.light #projects [class*="bg-\[\#060913\]"] {
+  background-color: #ffffff !important;
+  border: 1.5px solid #06b6d4 !important;
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25) !important;
+}
+
+/* Project Tech Tags */
+html.light #projects [class*="bg-cyan-950"] {
+  background-color: #e0f2fe !important;
+  border: 1.5px solid #bae6fd !important;
+  color: #0369a1 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 3px rgba(3, 105, 161, 0.08) !important;
+}
+
+/* Live Demo Button */
+html.light #projects a[href*="http"].bg-cyan-500 {
+  background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+}
+html.light #projects a[href*="http"].bg-cyan-500:hover {
+  filter: brightness(1.08) !important;
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.5) !important;
+}
+
+/* GitHub Repo Button */
+html.light #projects a[href*="github.com"] {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.05) !important;
+}
+html.light #projects a[href*="github.com"]:hover {
+  background-color: #f0f9ff !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* View Details Page Link */
+html.light #projects a[href^="/projects/"] {
+  background-color: #f0f9ff !important;
+  border: 1.5px solid #bae6fd !important;
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08) !important;
+}
+html.light #projects a[href^="/projects/"]:hover {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3) !important;
+}
+html.light #projects a[href^="/projects/"]:hover * {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   EDUCATION & EXPERIENCE IN LIGHT MODE
+   ========================================================================== */
+
+/* Degree & School Cards */
+html.light #education .glass-card,
+html.light #experience .glass-card {
+  background-color: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 8px 24px -5px rgba(15, 23, 42, 0.07) !important;
+}
+html.light #education .glass-card:hover,
+html.light #experience .glass-card:hover {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 16px 32px -5px rgba(6, 182, 212, 0.2) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* CGPA Badge */
+html.light #education [class*="border-emerald"],
+html.light [class*="border-emerald"] {
+  background-color: #ecfdf5 !important;
+  border: 1.5px solid #6ee7b7 !important;
+  color: #047857 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(4, 120, 87, 0.12) !important;
+}
+
+/* ==========================================================================
+   CONTACT SECTION IN LIGHT MODE (Vibrant Cards & Copy Buttons)
+   ========================================================================== */
+
+/* Contact Cards */
+html.light #contact .group.rounded-2xl {
+  background-color: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+html.light #contact .group.rounded-2xl:hover {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 10px 22px rgba(6, 182, 212, 0.18) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Icon-only Copy Button */
+html.light #contact button[title*="Copy"] {
+  background-color: #f8fafc !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #334155 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important;
+}
+html.light #contact button[title*="Copy"]:hover {
+  background-color: #f0f9ff !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.2) !important;
 }
 
 /* Inputs & Form in light mode */
 html.light input,
 html.light textarea {
   background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
+  border: 1.5px solid #cbd5e1 !important;
   color: #0f172a !important;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) inset !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) inset !important;
 }
 html.light input:focus,
 html.light textarea:focus {
   border-color: #0284c7 !important;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15) !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2) !important;
 }
 html.light input::placeholder,
 html.light textarea::placeholder {
   color: #94a3b8 !important;
 }
 
-/* Technology Badges & Pills */
+/* Section Header Badges ("TECHNICAL PROFICIENCY", "FEATURED WORK", etc.) */
+html.light div.inline-flex.rounded-full.border-cyan-500\/30,
+html.light div.inline-flex.rounded-full.border-indigo-500\/30,
+html.light div.inline-flex.rounded-full.border-emerald-500\/30 {
+  background-color: #e0f2fe !important;
+  border: 1.5px solid #bae6fd !important;
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Project Detail Callouts */
+html.light [class*="bg-amber-950"] {
+  background-color: #fffbeb !important;
+  border: 1.5px solid #fde68a !important;
+}
+html.light [class*="bg-amber-950"] h2,
+html.light [class*="bg-amber-950"] .text-amber-300 {
+  color: #92400e !important;
+}
+
+html.light [class*="bg-indigo-950"] {
+  background-color: #eef2ff !important;
+  border: 1.5px solid #c7d2fe !important;
+}
+html.light [class*="bg-indigo-950"] h2,
+html.light [class*="bg-indigo-950"] .text-indigo-300 {
+  color: #3730a3 !important;
+}
+
+/* Media placeholders & overlays */
+html.light .bg-slate-900 {
+  background-color: #f1f5f9 !important;
+}
+
+/* All other badges */
 html.light .theme-pill {
   background-color: #e0f2fe !important;
-  border-color: #bae6fd !important;
+  border: 1.5px solid #bae6fd !important;
   color: #0369a1 !important;
+  font-weight: 600 !important;
 }
 html.light .theme-text-accent {
   color: #0284c7 !important;
 }
 
-/* High-contrast pastel & accent colors */
+/* High-contrast colors */
 html.light .text-cyan-300,
 html.light .text-cyan-400 {
   color: #0284c7 !important;
 }
-
 html.light .text-pink-300,
 html.light .text-pink-400 {
   color: #e11d48 !important;
 }
-
 html.light .text-purple-300,
 html.light .text-purple-400 {
   color: #7e22ce !important;
 }
-
 html.light .text-amber-300,
 html.light .text-amber-400 {
   color: #b45309 !important;
 }
-
 html.light .text-emerald-300,
 html.light .text-emerald-400 {
   color: #047857 !important;
 }
-
 html.light .text-indigo-300,
 html.light .text-indigo-400 {
   color: #4338ca !important;
@@ -267,131 +581,10 @@ html.light svg[class*="text-white"] {
   fill: #0f172a !important;
 }
 
-/* Light mode category & skill badges */
-html.light [class*="bg-cyan-950"],
-html.light [class*="bg-cyan-500/10"],
-html.light [class*="bg-cyan-500/15"] {
-  background-color: #e0f2fe !important;
-  color: #0369a1 !important;
-  border-color: #bae6fd !important;
-}
-
-html.light [class*="bg-pink-500/15"],
-html.light [class*="bg-pink-500/20"] {
-  background-color: #ffe4e6 !important;
-  color: #be123c !important;
-  border-color: #fecdd3 !important;
-}
-
-html.light [class*="bg-purple-500/15"],
-html.light [class*="bg-purple-500/30"] {
-  background-color: #f3e8ff !important;
-  color: #6b21a8 !important;
-  border-color: #e9d5ff !important;
-}
-
-html.light [class*="bg-amber-500/10"],
-html.light [class*="bg-amber-500/20"] {
-  background-color: #fef3c7 !important;
-  color: #92400e !important;
-  border-color: #fde68a !important;
-}
-
-html.light [class*="bg-emerald-500/10"],
-html.light [class*="bg-emerald-500/15"],
-html.light [class*="bg-emerald-500/20"] {
-  background-color: #ecfdf5 !important;
-  color: #065f46 !important;
-  border-color: #a7f3d0 !important;
-}
-
-html.light [class*="bg-indigo-500/10"],
-html.light [class*="bg-indigo-500/15"] {
-  background-color: #eef2ff !important;
-  color: #3730a3 !important;
-  border-color: #c7d2fe !important;
-}
-
-/* Hero CONNECT social buttons in light mode */
-html.light #hero a.rounded-full:not(.theme-btn-primary) {
-  background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  color: #334155 !important;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
-}
-html.light #hero a.rounded-full:not(.theme-btn-primary):hover {
-  border-color: #0284c7 !important;
-  color: #0284c7 !important;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15) !important;
-}
-
-/* Projects Section enhancements in light mode */
-html.light #projects a[href*="http"].bg-cyan-500 {
-  background: linear-gradient(135deg, #06b6d4, #0284c7) !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
-}
-html.light #projects a[href*="http"].bg-cyan-500:hover {
-  filter: brightness(1.08) !important;
-}
-
-html.light #projects a[href*="github.com"] {
-  background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  color: #0f172a !important;
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04) !important;
-}
-html.light #projects a[href*="github.com"]:hover {
-  background-color: #f8fafc !important;
-  border-color: #0284c7 !important;
-  color: #0284c7 !important;
-}
-
-html.light #projects a[href^="/projects/"] {
-  background-color: #f0f9ff !important;
-  border-color: #bae6fd !important;
-  color: #0284c7 !important;
-  font-weight: 600 !important;
-}
-html.light #projects a[href^="/projects/"]:hover {
-  background-color: #e0f2fe !important;
-  border-color: #7dd3fc !important;
-  color: #0369a1 !important;
-}
-
-/* Project Detail Callouts */
-html.light [class*="bg-amber-950"] {
-  background-color: #fffbeb !important;
-  border-color: #fde68a !important;
-}
-html.light [class*="bg-amber-950"] h2,
-html.light [class*="bg-amber-950"] .text-amber-300 {
-  color: #92400e !important;
-}
-
-html.light [class*="bg-indigo-950"] {
-  background-color: #eef2ff !important;
-  border-color: #c7d2fe !important;
-}
-html.light [class*="bg-indigo-950"] h2,
-html.light [class*="bg-indigo-950"] .text-indigo-300 {
-  color: #3730a3 !important;
-}
-
-/* Media placeholders & overlays */
-html.light .bg-slate-900 {
-  background-color: #f1f5f9 !important;
-}
-html.light [class*="bg-[#060913]"] {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-color: #cbd5e1 !important;
-  color: #0f172a !important;
-}
-
 /* Light mode footer */
 html.light footer {
   background: linear-gradient(180deg, #f8fafc 0%, #eef4f9 100%) !important;
-  border-top-color: #e2e8f0 !important;
+  border-top: 1.5px solid #e2e8f0 !important;
   box-shadow: 0 -4px 20px -2px rgba(15, 23, 42, 0.03) !important;
 }
 html.light footer p,
@@ -400,7 +593,7 @@ html.light footer span {
 }
 html.light footer a {
   background-color: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
+  border: 1.5px solid #cbd5e1 !important;
   color: #334155 !important;
 }
 html.light footer a:hover {
@@ -411,9 +604,9 @@ html.light footer a:hover {
 
 /* Ambient glow in light mode: Watercolor aura */
 html.light .theme-ambient-glow {
-  opacity: 0.3 !important;
+  opacity: 0.35 !important;
   filter: blur(60px) !important;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%) !important;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, rgba(99, 102, 241, 0.12) 50%, transparent 70%) !important;
 }
 
 /* Glassmorphism Styles */

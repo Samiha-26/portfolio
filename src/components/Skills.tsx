@@ -277,28 +277,28 @@ export default function Skills() {
         </div>
 
         {/* 2x2 Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7">
           {skillsData.map((category) => (
             <div
               key={category.title}
-              className="glass-card rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-cyan-500/30 transition-all flex flex-col justify-between"
+              className="glass-card rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-cyan-500/30 transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                <div className="flex items-center justify-between pb-3.5 sm:pb-4 mb-3.5 sm:mb-4 border-b border-white/10">
                   <h3 className="text-sm sm:text-base font-semibold text-white tracking-tight">
                     {category.title}
                   </h3>
-                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/10 font-medium">
+                  <span className="text-[10px] sm:text-[11px] px-2 sm:px-2.5 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/10 font-medium">
                     {category.skills.length} skills
                   </span>
                 </div>
 
                 {/* Skill Icon Cards: Skill Icon on top, Skill Name below */}
-                <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3.5">
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className={`group p-3 sm:p-4 rounded-xl border transition-all duration-300 flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-lg ${
+                      className={`group p-2 sm:p-3.5 rounded-xl border transition-all duration-300 flex flex-col items-center justify-center text-center gap-1.5 sm:gap-2 hover:-translate-y-1 hover:shadow-lg ${
                         skill.highlight
                           ? "bg-white/[0.04] border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/[0.08]"
                           : "bg-white/[0.02] border-white/5 hover:border-white/20 hover:bg-white/[0.05]"
@@ -307,7 +307,7 @@ export default function Skills() {
                       <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                         <TechIcon name={skill.name} />
                       </div>
-                      <span className="text-[11px] sm:text-xs font-medium text-slate-200 group-hover:text-white transition-colors text-center leading-tight">
+                      <span className="text-[10.5px] sm:text-xs font-medium text-slate-200 group-hover:text-white transition-colors text-center leading-tight break-words max-w-full">
                         {skill.name}
                       </span>
                     </div>
@@ -315,9 +315,9 @@ export default function Skills() {
                 </div>
               </div>
 
-              <div className="pt-4 mt-5 border-t border-white/5 flex items-center gap-2 text-[11px] text-slate-400">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Hands-on project & academic experience</span>
+              <div className="pt-3.5 sm:pt-4 mt-4 sm:mt-5 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] text-slate-400">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span className="truncate">Hands-on project & academic experience</span>
               </div>
             </div>
           ))}

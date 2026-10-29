@@ -28,7 +28,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
@@ -36,21 +36,21 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-3xl bg-[#0b1222] border border-white/15 rounded-3xl shadow-2xl overflow-hidden z-10 my-8">
+      <div className="relative w-full max-w-3xl bg-[#0b1222] border border-white/15 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 my-4 sm:my-8">
         
         {/* Header Bar */}
-        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/10 bg-white/[0.02]">
-          <div>
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-cyan-400">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10 bg-white/[0.02]">
+          <div className="pr-3">
+            <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-cyan-400">
               Project Details & Architecture
             </span>
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+            <h3 className="text-base sm:text-xl font-bold text-white tracking-tight">
               {project.title}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+            className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors shrink-0"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -58,10 +58,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Modal Body */}
-        <div className="p-5 sm:p-7 space-y-5 max-h-[75vh] overflow-y-auto">
+        <div className="p-4 sm:p-7 space-y-4 sm:space-y-5 max-h-[70vh] sm:max-h-[75vh] overflow-y-auto">
           
           {/* Image Preview */}
-          <div className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden border border-white/10 bg-slate-900">
+          <div className="relative w-full h-40 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-slate-900">
             <Image
               src={project.image}
               alt={project.title}

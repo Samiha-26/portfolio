@@ -135,24 +135,18 @@ export default function Navbar() {
         {/* Right Actions: Light / Dark Mode Toggle & Mobile Hamburger */}
         <div className="flex items-center gap-2">
           
-          {/* Light / Dark Mode Toggle */}
+          {/* Light / Dark Mode Toggle (Icon only) */}
           <button
             type="button"
             onClick={toggleThemeMode}
-            className="p-2 sm:px-3 sm:py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] border border-white/15 text-slate-200 hover:text-white transition-all flex items-center gap-1.5 cursor-pointer shadow-md select-none group"
+            className="w-9 h-9 rounded-full bg-white/[0.08] hover:bg-white/[0.18] border border-white/15 text-slate-200 hover:text-white transition-all flex items-center justify-center cursor-pointer shadow-md select-none group active:scale-95"
             title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             aria-label="Toggle light and dark mode"
           >
             {isDarkMode ? (
-              <>
-                <Sun className="w-4 h-4 text-amber-300 transition-transform group-hover:rotate-45" />
-                <span className="hidden sm:inline text-xs font-medium text-slate-300">Light</span>
-              </>
+              <Sun className="w-4 h-4 text-amber-300 transition-transform duration-300 group-hover:rotate-90 group-hover:scale-110" />
             ) : (
-              <>
-                <Moon className="w-4 h-4 text-cyan-500 transition-transform group-hover:-rotate-12" />
-                <span className="hidden sm:inline text-xs font-medium text-slate-700">Dark</span>
-              </>
+              <Moon className="w-4 h-4 text-cyan-600 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
             )}
           </button>
 
@@ -217,18 +211,14 @@ export default function Navbar() {
                 toggleThemeMode();
                 setMobileMenuOpen(false);
               }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/15 bg-white/[0.05] text-xs font-semibold text-slate-200"
+              className="w-9 h-9 rounded-full border border-white/15 bg-white/[0.08] hover:bg-white/[0.18] flex items-center justify-center transition-all cursor-pointer shadow-md select-none active:scale-95"
+              title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              aria-label="Toggle light and dark mode"
             >
               {isDarkMode ? (
-                <>
-                  <Sun className="w-4 h-4 text-amber-300" />
-                  <span>Switch to Light</span>
-                </>
+                <Sun className="w-4 h-4 text-amber-300" />
               ) : (
-                <>
-                  <Moon className="w-4 h-4 text-cyan-500" />
-                  <span>Switch to Dark</span>
-                </>
+                <Moon className="w-4 h-4 text-cyan-600" />
               )}
             </button>
           </div>

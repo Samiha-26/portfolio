@@ -39,7 +39,7 @@ export default function Projects() {
                 {/* Screenshot & Top Floating Badge Container (Clickable Link) */}
                 <Link 
                   href={`/projects/${project.id}`}
-                  className="block relative w-full h-52 sm:h-60 bg-slate-900 overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
+                  className="block relative w-full h-48 sm:h-56 md:h-60 bg-slate-900 overflow-hidden border-b border-white/10 group-hover:opacity-95 transition-opacity"
                   title="Click to view details and challenges"
                 >
                   <Image
@@ -50,13 +50,13 @@ export default function Projects() {
                   />
                   
                   {/* Floating Pill Status Badge */}
-                  <div className="absolute top-2.5 right-2.5 z-10 px-2.5 py-0.5 rounded-full bg-[#060913]/85 backdrop-blur-md border border-white/15 text-[10px] font-medium text-slate-200 tracking-wide shadow-lg">
+                  <div className="absolute top-2.5 right-2.5 z-10 px-2.5 py-0.5 rounded-full bg-[#060913]/85 backdrop-blur-md border border-white/15 text-[10px] font-medium text-slate-200 tracking-wide shadow-lg max-w-[75%] truncate">
                     {project.badge}
                   </div>
                 </Link>
 
                 {/* Content Block */}
-                <div className="p-5 space-y-3">
+                <div className="p-4 sm:p-5 space-y-3">
                   {/* Title & Subtitle */}
                   <div>
                     <Link href={`/projects/${project.id}`}>
@@ -86,17 +86,17 @@ export default function Projects() {
               </div>
 
               {/* Bottom Buttons Row: Live Demo + GitHub Repo */}
-              <div className="p-5 pt-1 space-y-2.5">
-                <div className="grid grid-cols-2 gap-2.5">
+              <div className="p-4 sm:p-5 pt-1 space-y-2 sm:space-y-2.5">
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
                   {/* Live Demo Button (Cyan Filled) */}
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-cyan-500/20 active:scale-95"
+                    className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-cyan-500/20 active:scale-95"
                   >
                     <span>Live Demo</span>
-                    <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-3 h-3 shrink-0" />
                   </a>
 
                   {/* GitHub Repo Button (Dark Outline) */}
@@ -104,19 +104,19 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 font-medium text-xs transition-all active:scale-95"
+                    className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 font-medium text-xs transition-all active:scale-95"
                   >
                     <span>GitHub Repo</span>
-                    <Github className="w-3 h-3" />
+                    <Github className="w-3 h-3 shrink-0" />
                   </a>
                 </div>
 
                 {/* View Details Page Link */}
                 <Link
                   href={`/projects/${project.id}`}
-                  className="w-full text-center py-1.5 px-3 rounded-xl bg-white/[0.04] hover:bg-cyan-500/15 border border-white/10 hover:border-cyan-500/40 text-xs text-slate-300 hover:text-cyan-300 flex items-center justify-center gap-1.5 transition-all font-medium group/btn shadow-sm"
+                  className="w-full text-center py-2 px-3 rounded-xl bg-white/[0.04] hover:bg-cyan-500/15 border border-white/10 hover:border-cyan-500/40 text-xs text-slate-300 hover:text-cyan-300 flex items-center justify-center gap-1.5 transition-all font-medium group/btn shadow-sm"
                 >
-                  <Info className="w-3.5 h-3.5 text-cyan-400 group-hover/btn:scale-110 transition-transform" />
+                  <Info className="w-3.5 h-3.5 text-cyan-400 group-hover/btn:scale-110 transition-transform shrink-0" />
                   <span>View Details & Challenges ↗</span>
                 </Link>
               </div>

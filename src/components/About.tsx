@@ -27,7 +27,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
 
           {/* Card 1: Programming Journey */}
-          <div className="rounded-3xl p-7 sm:p-9 bg-[#0a1224]/85 backdrop-blur-xl border border-white/10 hover:border-[var(--theme-accent-border)] shadow-xl shadow-black/50 transition-all duration-300 flex flex-col justify-between space-y-6 group hover:shadow-2xl hover:shadow-[var(--theme-accent-glow)]">
+          <div className="rounded-3xl p-5 sm:p-7 md:p-9 bg-[#0a1224]/85 backdrop-blur-xl border border-white/10 hover:border-[var(--theme-accent-border)] shadow-xl shadow-black/50 transition-all duration-300 flex flex-col justify-between space-y-5 sm:space-y-6 group hover:shadow-2xl hover:shadow-[var(--theme-accent-glow)]">
             <div className="space-y-4">
               <div
                 className="rounded-2xl p-3 w-fit shadow-md border transition-all"
@@ -40,7 +40,7 @@ export default function About() {
                 <Code2 className="w-5 h-5" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight group-hover:text-[var(--theme-accent-light)] transition-colors">
+              <h3 className="text-lg sm:text-2xl font-serif font-bold text-white tracking-tight group-hover:text-[var(--theme-accent-light)] transition-colors">
                 My Coding Journey
               </h3>
 
@@ -64,13 +64,13 @@ export default function About() {
           </div>
 
           {/* Card 2: Cozy Yarn & Creativity */}
-          <div className="rounded-3xl p-7 sm:p-9 bg-[#110e1c]/85 backdrop-blur-xl border border-pink-500/20 hover:border-pink-400/50 shadow-xl shadow-black/50 transition-all duration-300 flex flex-col justify-between space-y-6 group hover:shadow-2xl hover:shadow-pink-500/20">
+          <div className="rounded-3xl p-5 sm:p-7 md:p-9 bg-[#110e1c]/85 backdrop-blur-xl border border-pink-500/20 hover:border-pink-400/50 shadow-xl shadow-black/50 transition-all duration-300 flex flex-col justify-between space-y-5 sm:space-y-6 group hover:shadow-2xl hover:shadow-pink-500/20">
             <div className="space-y-4">
               <div className="rounded-2xl p-3 w-fit shadow-md border border-pink-500/30 bg-pink-500/15 text-pink-400">
                 <Heart className="w-5 h-5" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight group-hover:text-pink-300 transition-colors">
+              <h3 className="text-lg sm:text-2xl font-serif font-bold text-white tracking-tight group-hover:text-pink-300 transition-colors">
                 Beyond the Screen: Cozy Yarn
               </h3>
 
@@ -88,14 +88,14 @@ export default function About() {
             </div>
 
             {/* Aesthetic Tag Pills */}
-            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-              <span className="px-3 py-1 rounded-full text-xs font-medium bg-pink-500/15 text-pink-300 border border-pink-500/30">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-4 border-t border-white/10">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-pink-500/15 text-pink-300 border border-pink-500/30">
                 🧶 Handcrafted Crochet
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-medium bg-purple-500/15 text-purple-300 border border-purple-500/30">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-purple-500/15 text-purple-300 border border-purple-500/30">
                 🎨 Creative Aesthetics
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-medium theme-pill">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium theme-pill">
                 ⏳ Detail & Discipline
               </span>
             </div>
@@ -104,56 +104,56 @@ export default function About() {
         </div>
 
         {/* Quick Highlights Bar: 5 Balanced Metric Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3.5 mt-6 sm:mt-8">
           
           {/* 1. Education */}
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+          <div className="rounded-2xl p-3 sm:p-4 md:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
             <div>
-              <GraduationCap className="w-5 h-5 theme-text-accent mx-auto mb-2 transition-transform group-hover:scale-110" />
-              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Education</p>
+              <GraduationCap className="w-5 h-5 theme-text-accent mx-auto mb-1.5 sm:mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Education</p>
               <p className="text-xs sm:text-sm font-bold text-white mt-1 leading-snug">4th Year Undergraduate Student</p>
             </div>
-            <p className="text-[11px] text-slate-400 mt-2">Metropolitan Univ.</p>
+            <p className="text-[10px] sm:text-[11px] text-slate-400 mt-2">Metropolitan Univ.</p>
           </div>
 
           {/* 2. Current CGPA (Between Education and Stack) */}
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-emerald-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+          <div className="rounded-2xl p-3 sm:p-4 md:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-emerald-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
             <div>
-              <Award className="w-5 h-5 text-emerald-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
-              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Current CGPA</p>
+              <Award className="w-5 h-5 text-emerald-400 mx-auto mb-1.5 sm:mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Current CGPA</p>
               <p className="text-xs sm:text-sm font-bold text-emerald-300 mt-1">3.76 / 4.00</p>
             </div>
-            <p className="text-[11px] text-slate-400 mt-2">Academic Standing</p>
+            <p className="text-[10px] sm:text-[11px] text-slate-400 mt-2">Academic Standing</p>
           </div>
 
           {/* 3. Focus Stack */}
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+          <div className="rounded-2xl p-3 sm:p-4 md:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-[var(--theme-accent-border)] transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
             <div>
-              <Code2 className="w-5 h-5 theme-text-accent mx-auto mb-2 transition-transform group-hover:scale-110" />
-              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Focus Stack</p>
+              <Code2 className="w-5 h-5 theme-text-accent mx-auto mb-1.5 sm:mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Focus Stack</p>
               <p className="text-xs sm:text-sm font-bold text-white mt-1">Full Stack</p>
             </div>
-            <p className="text-[11px] theme-text-accent mt-2 truncate">MERN • Next.js • TS</p>
+            <p className="text-[10px] sm:text-[11px] theme-text-accent mt-2 truncate">MERN • Next.js • TS</p>
           </div>
 
           {/* 4. Venture */}
-          <div className="rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-pink-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+          <div className="rounded-2xl p-3 sm:p-4 md:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-pink-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
             <div>
-              <Heart className="w-5 h-5 text-pink-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
-              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Venture</p>
+              <Heart className="w-5 h-5 text-pink-400 mx-auto mb-1.5 sm:mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Venture</p>
               <p className="text-xs sm:text-sm font-bold text-white mt-1">Cozy Yarn</p>
             </div>
-            <p className="text-[11px] text-pink-300 mt-2">Handcrafted Founder</p>
+            <p className="text-[10px] sm:text-[11px] text-pink-300 mt-2">Handcrafted Founder</p>
           </div>
 
           {/* 5. Status */}
-          <div className="col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-1 rounded-2xl p-4 sm:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-indigo-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
+          <div className="col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-1 rounded-2xl p-3 sm:p-4 md:p-5 bg-[#0a1224]/80 backdrop-blur-lg border border-white/10 hover:border-indigo-500/40 transition-all text-center shadow-lg group hover:-translate-y-0.5 flex flex-col justify-between">
             <div>
-              <Briefcase className="w-5 h-5 text-indigo-400 mx-auto mb-2 transition-transform group-hover:scale-110" />
-              <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Status</p>
+              <Briefcase className="w-5 h-5 text-indigo-400 mx-auto mb-1.5 sm:mb-2 transition-transform group-hover:scale-110" />
+              <p className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Status</p>
               <p className="text-xs sm:text-sm font-bold text-white mt-1">Open for Opportunities</p>
             </div>
-            <p className="text-[11px] text-indigo-300 mt-2">Full-Time & Internships</p>
+            <p className="text-[10px] sm:text-[11px] text-indigo-300 mt-2">Full-Time & Internships</p>
           </div>
 
         </div>

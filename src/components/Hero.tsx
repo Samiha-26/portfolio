@@ -17,9 +17,9 @@ export default function Hero() {
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
 
             {/* Pill Badge matching reference */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide shadow-sm theme-pill transition-colors duration-500">
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--theme-accent)" }} />
-              <span>Aspiring Full-Stack Developer & 4th Year CSE Undergraduate Student</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-3.5 rounded-2xl sm:rounded-full text-[11px] sm:text-xs font-semibold tracking-wide shadow-sm theme-pill transition-colors duration-500 max-w-full text-center sm:text-left leading-snug">
+              <span className="w-2 h-2 rounded-full animate-pulse shrink-0" style={{ backgroundColor: "var(--theme-accent)" }} />
+              <span className="break-words">Aspiring Full-Stack Developer & 4th Year CSE Undergraduate Student</span>
             </div>
 
             {/* Headline matching reference: "Hi," + "I'm Samiha Rahman" */}
@@ -27,7 +27,7 @@ export default function Hero() {
               <p className="font-serif italic text-2xl sm:text-3xl lg:text-4xl font-normal theme-text-accent transition-colors duration-500">
                 Hi,
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.15]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.15]">
                 I'm <br />
                 <span className="text-white">
                   {personalInfo.name}
@@ -36,7 +36,7 @@ export default function Hero() {
             </div>
 
             {/* Action Buttons: Download Resume (Theme primary) & GitHub Profile (Dark outline) */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-3.5 pt-2">
               <a
                 href={personalInfo.resumeUrl}
                 onClick={(e) => {
@@ -45,7 +45,7 @@ export default function Hero() {
                     alert("Resume will be available soon!");
                   }
                 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm theme-btn-primary transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm theme-btn-primary transition-all cursor-pointer shadow-md"
                 title="Download Resume"
               >
                 <span>Download Resume</span>
@@ -56,7 +56,7 @@ export default function Hero() {
                 href={personalInfo.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 hover:bg-white/10 border border-white/15 hover:border-[var(--theme-accent)] text-slate-200 hover:text-white font-medium text-xs sm:text-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-black/40 hover:bg-white/10 border border-white/15 hover:border-[var(--theme-accent)] text-slate-200 hover:text-white font-medium text-xs sm:text-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>GitHub Profile</span>
                 <ExternalLink className="w-3.5 h-3.5 theme-text-accent" />
@@ -106,14 +106,14 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Circular Profile Photo with Glowing Ring */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="relative group">
 
               {/* Ambient Glow */}
               <div className="absolute -inset-2 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition duration-700 theme-ambient-glow" />
 
               {/* Circular Profile Image Container */}
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full p-1 theme-gradient-ring shadow-2xl transition-all duration-700">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full p-1 theme-gradient-ring shadow-2xl transition-all duration-700">
                 <div className="w-full h-full rounded-full overflow-hidden bg-[#0a1020] relative">
                   <Image
                     src={personalInfo.avatar}

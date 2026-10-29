@@ -66,14 +66,14 @@ export default function Footer() {
           </div>
 
           {/* Back to top button */}
-          <div className="flex items-center gap-4">
-            <p className="text-xs text-slate-400 flex items-center gap-1">
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-2.5 sm:gap-4 text-center sm:text-right">
+            <p className="text-xs text-slate-400">
               Built with Next.js, Tailwind & TypeScript
             </p>
             <a
               href="#hero"
               onClick={scrollToTop}
-              className="p-2.5 rounded-full bg-white/5 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 border border-white/10 hover:border-cyan-500/40 transition-all cursor-pointer active:scale-95 group flex items-center justify-center"
+              className="p-2.5 rounded-full bg-white/5 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 border border-white/10 hover:border-cyan-500/40 transition-all cursor-pointer active:scale-95 group flex items-center justify-center shrink-0"
               title="Back to Top"
               aria-label="Back to top"
             >
