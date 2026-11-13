@@ -2,7 +2,7 @@
 
 My personal portfolio website. It covers who I am, what I work with, my education, projects I've built, my creative venture and how to reach me.
 
-**Live site:** [https://portfolio-samiha.vercel.app](https://portfolio-samiha.vercel.app) *(or your deployed Vercel link)*
+**Live site:** [https://portfolio-samiha.vercel.app](https://samiha-samiha1.vercel.app/)
 
 ---
 
