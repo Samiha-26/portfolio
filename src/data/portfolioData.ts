@@ -22,6 +22,31 @@ export const personalInfo = {
 
 export const projectsData: Project[] = [
   {
+    id: "oikyo",
+    title: "Oikyo (ঐক্য) — Civic Impact Platform",
+    subtitle: "District-Wide Grassroots Civic Mobilization & Volunteer Rostering Platform",
+    badge: "Full-Stack • Next.js & Express • 64 Districts",
+    description: "Oikyo (ঐক্য) is a civic impact platform designed to mobilize, coordinate, and track social service events across all 64 districts of Bangladesh. Built for grassroots community resilience, the platform lets organizers launch verified relief campaigns—such as winter clothing distributions, canal cleanups, medical camps, and coastal tree planting—while giving volunteers transparent rosters to sign up and participate with ease.",
+    image: "/assets/projects/oikyo.jpg",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "DaisyUI", "Better Auth", "Express.js", "MongoDB", "Jose (JWKS)", "SweetAlert2"],
+    skills: ["Next.js", "TypeScript", "Express.js", "MongoDB", "Better Auth", "JWKS Token Security", "DaisyUI", "Responsive Design"],
+    liveUrl: "https://oikyo-topaz.vercel.app",
+    githubUrl: "https://github.com/Samiha-26/oikyo",
+    githubServerUrl: "https://github.com/Samiha-26/oikyo-server",
+    keyFeatures: [
+      "Browse community service drives across Bangladesh and filter by category (Cleanup, Plantation, Donation, Winter Clothing, Medical Relief, Education, Water Sanitation) or district, with 6 newest upcoming drives on home page",
+      "Secure credential registration with uppercase, lowercase, and length validation, or Google OAuth via BetterAuth with session persistence on reload",
+      "Create social service drives with category, district, location, cover image, volunteer quota, and strict future-date validation",
+      "Manage, edit, or delete created events with custom SweetAlert2 confirmation dialogs",
+      "Join events with live quota progress bars that increment in real time and automatically disable enrollment when capacity is reached",
+      "Strict duplicate prevention with Joined Events roster sorted chronologically and spot-release functionality",
+      "Express API with remote JWKS JSON Web Token verification on all protected routes to enforce creator-only editing and role access",
+      "Interactive 64-district impact map, shimmering loading skeletons, volunteer profile editor, and dark/light mode toggle"
+    ],
+    challenges: "Architecting secure cross-domain token verification between the Next.js frontend and Express.js backend using remote JWKS via Jose, alongside synchronizing real-time volunteer quota progress bars while strictly preventing duplicate registrations and race conditions during high-demand relief drives.",
+    futurePlans: "Incorporate real-time SMS dispatch alerts for urgent emergency relief events, integrate verified organizer badges with NID verification, and implement volunteer certificate generation upon event completion."
+  },
+  {
     id: "fit-log",
     title: "Fit-Log — Workout Planner",
     subtitle: "Interactive Workout Planning & Progress Tracking Platform",
@@ -110,6 +135,7 @@ export const skillsData: SkillCategory[] = [
       { name: "React", icon: "react", highlight: true },
       { name: "Next.js", icon: "nextjs", highlight: true },
       { name: "Tailwind CSS", icon: "tailwind", highlight: true },
+      { name: "shadcn/ui", icon: "shadcn", highlight: true },
       { name: "HTML5", icon: "html5" },
       { name: "CSS3", icon: "css3" },
       { name: "DaisyUI", icon: "daisyui" },
@@ -121,6 +147,7 @@ export const skillsData: SkillCategory[] = [
       { name: "Node.js", icon: "nodejs", highlight: true },
       { name: "Express.js", icon: "express", highlight: true },
       { name: "MongoDB", icon: "mongodb", highlight: true },
+      { name: "Better Auth", icon: "betterauth", highlight: true },
       { name: "Mongoose", icon: "mongoose" },
       { name: "REST APIs", icon: "api", highlight: true },
       { name: "JWT Auth", icon: "jwt" },
@@ -132,6 +159,7 @@ export const skillsData: SkillCategory[] = [
       { name: "Git", icon: "git", highlight: true },
       { name: "GitHub", icon: "github", highlight: true },
       { name: "VS Code", icon: "vscode", highlight: true },
+      { name: "Figma", icon: "figma", highlight: true },
       { name: "Vite", icon: "vite" },
       { name: "Vercel", icon: "vercel" },
       { name: "Netlify", icon: "netlify" },

@@ -347,6 +347,17 @@ html.light #skills [class*="bg-\[\#880000\]\/20"] {
   font-weight: 800 !important;
 }
 
+html.light #skills [class*="from-emerald-500\/20"] {
+  background: #ecfdf5 !important;
+  border: 1.5px solid #a7f3d0 !important;
+  color: #059669 !important;
+  box-shadow: 0 2px 5px rgba(5, 150, 105, 0.15) !important;
+}
+html.light #skills [class*="from-emerald-500\/20"] span {
+  color: #059669 !important;
+  font-weight: 800 !important;
+}
+
 /* ==========================================================================
    PROJECTS SECTION IN LIGHT MODE (Vibrant Badges & High-Contrast Buttons)
    ========================================================================== */

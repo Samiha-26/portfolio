@@ -54,8 +54,8 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
             {project.subtitle}
           </p>
 
-          {/* Action Buttons: Live Demo + GitHub Client */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+          {/* Action Buttons: Live Demo + GitHub Repositories */}
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 pt-1">
             <a
               href={project.liveUrl}
               target="_blank"
@@ -72,9 +72,21 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-medium text-xs transition-all"
             >
-              <span>GitHub Repository</span>
+              <span>{project.githubServerUrl ? "Client Repository" : "GitHub Repository"}</span>
               <Github className="w-3.5 h-3.5 shrink-0" />
             </a>
+
+            {project.githubServerUrl && (
+              <a
+                href={project.githubServerUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-medium text-xs transition-all"
+              >
+                <span>Server Repository</span>
+                <Github className="w-3.5 h-3.5 shrink-0" />
+              </a>
+            )}
           </div>
         </div>
 

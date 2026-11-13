@@ -142,7 +142,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Modal Footer Actions */}
         <div className="p-5 border-t border-white/10 bg-white/[0.02] flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5 w-full sm:w-auto">
+          <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
             <a
               href={project.liveUrl}
               target="_blank"
@@ -158,9 +158,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               rel="noreferrer"
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all"
             >
-              <span>GitHub Client</span>
+              <span>{project.githubServerUrl ? "Client Repo" : "GitHub Repo"}</span>
               <Github className="w-3.5 h-3.5" />
             </a>
+            {project.githubServerUrl && (
+              <a
+                href={project.githubServerUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all"
+              >
+                <span>Server Repo</span>
+                <Github className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
           <button
             onClick={onClose}

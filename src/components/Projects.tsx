@@ -87,13 +87,13 @@ export default function Projects() {
 
               {/* Bottom Buttons Row: Live Demo + GitHub Repo */}
               <div className="p-4 sm:p-5 pt-1 space-y-2 sm:space-y-2.5">
-                <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
+                <div className={`grid ${project.githubServerUrl ? "grid-cols-3" : "grid-cols-2"} gap-2 sm:gap-2.5`}>
                   {/* Live Demo Button (Cyan Filled) */}
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-cyan-500/20 active:scale-95"
+                    className="inline-flex items-center justify-center gap-1 px-2 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-cyan-500/20 active:scale-95"
                   >
                     <span>Live Demo</span>
                     <ExternalLink className="w-3 h-3 shrink-0" />
@@ -104,11 +104,25 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 font-medium text-xs transition-all active:scale-95"
+                    className="inline-flex items-center justify-center gap-1 px-2 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 font-medium text-xs transition-all active:scale-95"
+                    title={project.githubServerUrl ? "Client Repository" : "GitHub Repository"}
                   >
-                    <span>GitHub Repo</span>
+                    <span>{project.githubServerUrl ? "Client" : "GitHub Repo"}</span>
                     <Github className="w-3 h-3 shrink-0" />
                   </a>
+
+                  {project.githubServerUrl && (
+                    <a
+                      href={project.githubServerUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-1 px-2 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 font-medium text-xs transition-all active:scale-95"
+                      title="Server Repository"
+                    >
+                      <span>Server</span>
+                      <Github className="w-3 h-3 shrink-0" />
+                    </a>
+                  )}
                 </div>
 
                 {/* View Details Page Link */}

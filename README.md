@@ -13,7 +13,8 @@ My personal portfolio website. It covers who I am, what I work with, my educatio
 - **Hero Section**: Features a profile portrait, custom status badge (*"Aspiring Full-Stack Developer & 4th Year CSE Undergraduate Student"*), social links (GitHub, LinkedIn, Email), and a one-click resume download button.
 - **About Me**: Highlights my authentic coding journey as a 4th-year CSE student at Metropolitan University, Sylhet, discovering web development, building full-stack applications like **FoodBridge**, and balancing engineering with running **Cozy Yarn**, my handcrafted crochet small business.
 - **Categorized Skills**: Technical skills organized into four distinct domains (Frontend Development, Backend & Database, Tools & Platforms, and Programming Languages) with official brand icons and clean name labels.
-- **Featured Projects & Deep Dives**: Four showcase projects (**Fit-Log**, **Bazar Dor**, **Dev Stack**, and **FoodBridge**) displayed in a 2x2 grid with:
+- **Featured Projects & Deep Dives**: Five showcase projects (**Oikyo (ঐক্য)**, **Fit-Log**, **Bazar Dor**, **Dev Stack**, and **FoodBridge**) displayed with:
+  - Direct links to Live Demos, Client Repositories, and Server Repositories.
   - An interactive **Quick View Modal** for fast previews without leaving the page.
   - Dedicated dynamic SSG detail pages (`/projects/[id]`) highlighting the live demo, GitHub repository, key features, architecture, challenges faced, and future plans.
 - **Education & Experience**: An academic timeline covering my B.Sc. in CSE, HSC, and SSC milestones, alongside real-world entrepreneurial experience as the Founder of Cozy Yarn.
@@ -55,7 +56,7 @@ src/
     └── portfolioData.ts        # Centralized data: personal info, skills, education, projects
 public/
 ├── assets/
-│   ├── projects/               # Project screenshots (Fit-Log, Bazar Dor, Dev Stack, FoodBridge)
+│   ├── projects/               # Project screenshots (Oikyo, Fit-Log, Bazar Dor, Dev Stack, FoodBridge)
 │   └── samiha.png              # Profile portrait photo
 └── favicon.ico
 ```

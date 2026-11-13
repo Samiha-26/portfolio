@@ -9,6 +9,7 @@ export interface Project {
   skills: string[];
   liveUrl: string;
   githubUrl: string;
+  githubServerUrl?: string;
   keyFeatures: string[];
   challenges?: string;
   futurePlans?: string;
