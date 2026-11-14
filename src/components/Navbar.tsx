@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, FileDown } from "lucide-react";
+import { personalInfo } from "@/data/portfolioData";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -193,6 +194,16 @@ export default function Navbar() {
               </a>
             );
           })}
+
+          <a
+            href={personalInfo.resumeUrl}
+            download="Samiha_Rahman_Resume.pdf"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-200 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-all"
+          >
+            <span>Download Resume</span>
+            <FileDown className="w-4 h-4 text-cyan-400" />
+          </a>
 
           {/* Mobile Appearance Toggle */}
           <div className="pt-3 border-t border-white/10 flex items-center justify-between px-1">

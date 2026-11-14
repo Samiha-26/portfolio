@@ -39,8 +39,9 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-3.5 pt-2">
               <a
                 href={personalInfo.resumeUrl}
+                download="Samiha_Rahman_Resume.pdf"
                 onClick={(e) => {
-                  if (personalInfo.resumeUrl === "#") {
+                  if (!personalInfo.resumeUrl || personalInfo.resumeUrl === "#") {
                     e.preventDefault();
                     alert("Resume will be available soon!");
                   }

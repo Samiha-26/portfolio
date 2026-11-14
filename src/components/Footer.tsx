@@ -1,7 +1,7 @@
 "use client";
 
 import { personalInfo } from "@/data/portfolioData";
-import { ArrowUp, Github, Linkedin, Mail, Heart } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail, Heart, FileDown } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -30,9 +30,19 @@ export default function Footer() {
               <p className="text-sm font-semibold text-white">
                 {personalInfo.name}
               </p>
-              <p className="text-xs text-slate-400">
-                Aspiring Full-Stack Developer
-              </p>
+              <div className="flex items-center justify-center sm:justify-start gap-2 text-xs text-slate-400">
+                <span>Aspiring Full-Stack Developer</span>
+                <span>•</span>
+                <a
+                  href={personalInfo.resumeUrl}
+                  download="Samiha_Rahman_Resume.pdf"
+                  className="text-cyan-400 hover:text-cyan-300 font-medium inline-flex items-center gap-1 hover:underline"
+                  title="Download Resume (PDF)"
+                >
+                  <FileDown className="w-3 h-3" />
+                  <span>Resume</span>
+                </a>
+              </div>
             </div>
           </div>
 
