@@ -133,6 +133,15 @@ export default function TechMiniIcon({ name }: { name: string }) {
     );
   }
 
+  // Stripe
+  if (n.includes("stripe")) {
+    return (
+      <span className="w-3.5 h-3.5 rounded-[3px] bg-[#635BFF]/20 text-[#635BFF] border border-[#635BFF]/40 flex items-center justify-center font-mono font-bold text-[7px] shrink-0 leading-none">
+        S
+      </span>
+    );
+  }
+
   // Figma
   if (n.includes("figma")) {
     return (

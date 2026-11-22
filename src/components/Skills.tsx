@@ -281,6 +281,15 @@ function TechIcon({ name }: { name: string }) {
     );
   }
 
+  // 30. Stripe
+  if (n.includes("stripe")) {
+    return (
+      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#635BFF]/20 border border-[#635BFF]/40 text-[#635BFF] flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-105 transition-transform">
+        <span className="font-mono font-black text-sm">S</span>
+      </div>
+    );
+  }
+
   // Default fallback badge
   return (
     <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center justify-center font-bold text-xs shadow-sm">

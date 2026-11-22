@@ -47,6 +47,33 @@ export const projectsData: Project[] = [
     futurePlans: "Incorporate real-time SMS dispatch alerts for urgent emergency relief events, integrate verified organizer badges with NID verification, and implement volunteer certificate generation upon event completion."
   },
   {
+    id: "pizzahub",
+    title: "PizzaHub — Artisanal Marketplace",
+    subtitle: "Artisanal Multi-Tenant Pizza Ordering & Wood-Fired Hearth Delivery Platform",
+    badge: "Full-Stack • Next.js 16 & Express • Multi-Tenant",
+    description: "PizzaHub is an artisanal pizza ordering and delivery platform connecting food lovers with authentic wood-fired pizzerias across the United States. Built as a full-featured, multi-tenant marketplace, the platform allows customers to discover local pizza houses, customize cold-fermented sourdough pies, track dispatches through an interactive 4-stage hearth timeline, and place multi-item orders via a slide-over cart. Independent pizzerias manage culinary catalogs, monitor kitchen quotas, and progress ticket dispatches, while platform administrators govern accounts, moderate recipes, and monitor Stripe financial transactions.",
+    image: "/assets/projects/pizzahub.jpg",
+    tech: ["Next.js 16", "React", "TypeScript", "Tailwind CSS", "ShadCN UI", "Better Auth", "Express.js", "MongoDB", "Stripe", "Jose (JWKS)", "Framer Motion"],
+    skills: ["Next.js 16", "TypeScript", "Multi-Tenant Architecture", "Express.js", "MongoDB", "Better Auth", "Stripe API", "JWKS Token Security", "ShadCN UI", "Responsive Design"],
+    liveUrl: "https://pizzahub-client-eta.vercel.app",
+    githubUrl: "https://github.com/Samiha-26/pizzahub-client",
+    githubServerUrl: "https://github.com/Samiha-26/pizzahub-server",
+    keyFeatures: [
+      "Artisan Catalog & Advanced Filtering: Full-text keyword search across names, ingredients, and descriptions with category, crust fermentation style filters, and dynamic price/rating sorting",
+      "Interactive Slide-Over Cart Drawer: Global persistent cart with real-time navbar counter, steppers, item removal, sales tax calculation, free delivery threshold ($35+), and multi-item order placement",
+      "Hearth Dispatch Scheduling & Real-Time Timeline: ASAP or future slot delivery scheduling with customer notes and a live 4-stage order dispatch progress tracker (Order Placed, Hearth Wood-Firing, Thermal Transit, Delivered Hot)",
+      "Order Management & Receipts: Dashboard order cancellation for pending orders with secure locked states for in-progress dispatches, plus itemized printable invoices and receipts",
+      "Verified Buyer Reviews & Ratings: 1–5 star ratings and reviews on pizza detail pages with dynamic average score updates and star rating distribution breakdown",
+      "Dedicated Role-Based Dashboards: Left sidebar navigation on desktop transitioning to native commercial bottom navigation on mobile with role badges and active highlights",
+      "Vendor Kitchen Portal: Restaurant profile management, hearth revenue tracking, recipe limits, ImgBB photo CDN uploads, pizza customization, and live ticket processing",
+      "Stripe Subscription Upgrades: Free-tier vendors capped at 3 recipes can upgrade to Premium ($29/month) via Stripe Checkout to activate unlimited slots via verified webhooks",
+      "Platform Administration & Governance: Admin dashboard for gross platform volume, total orders, users, and recipes with server-side account blocking and recipe moderation",
+      "Secure Authentication & JWKS JWT: Email/password and Google OAuth via Better Auth with password complexity rules and remote JWKS JWT token verification via Jose on all protected Express routes"
+    ],
+    challenges: "Architecting secure multi-tenant role-based access control across Customers, Vendors, and Platform Admins using remote JWKS token verification via Jose with fallback to symmetric secrets, alongside synchronizing real-time URL search parameters for multi-attribute filtering with debouncing and persistent shopping cart states.",
+    futurePlans: "Introduce driver dispatch mobile app with live GPS map tracking, automated vendor payout transfers via Stripe Connect, and customer loyalty points redeemable for artisanal toppings."
+  },
+  {
     id: "fit-log",
     title: "Fit-Log — Workout Planner",
     subtitle: "Interactive Workout Planning & Progress Tracking Platform",
@@ -148,6 +175,7 @@ export const skillsData: SkillCategory[] = [
       { name: "Express.js", icon: "express", highlight: true },
       { name: "MongoDB", icon: "mongodb", highlight: true },
       { name: "Better Auth", icon: "betterauth", highlight: true },
+      { name: "Stripe API", icon: "stripe", highlight: true },
       { name: "Mongoose", icon: "mongoose" },
       { name: "REST APIs", icon: "api", highlight: true },
       { name: "JWT Auth", icon: "jwt" },
